@@ -1,0 +1,61 @@
+[
+  {
+    "id": "start",
+    "message": "👋 Welcome to Elite Cuts! How can I help you today?",
+    "options": [
+      { "label": "Book Appointment", "next": "book" },
+      { "label": "View Services & Prices", "next": "services" },
+      { "label": "Locate Us", "next": "locate" },
+      { "label": "Speak to Barber", "next": "speak" },
+      { "label": "Offers & Discounts", "next": "offers" },
+      { "label": "Working Hours", "next": "hours" }
+    ]
+  },
+  {
+    "id": "book",
+    "message": "Let's get your appointment booked! What’s your name?",
+    "input": true,
+    "next": "chooseService"
+  },
+  {
+    "id": "chooseService",
+    "message": "Which service would you like?",
+    "options": [
+      { "label": "Haircut", "next": "chooseBarber" },
+      { "label": "Shave", "next": "chooseBarber" },
+      { "label": "Beard Trim", "next": "chooseBarber" }
+    ]
+  },
+  {
+    "id": "chooseBarber",
+    "message": "Choose your preferred barber:",
+    "options": [
+      { "label": "John ✂️", "next": "chooseTime" },
+      { "label": "Mike 💈", "next": "chooseTime" }
+    ]
+  },
+  {
+    "id": "chooseTime",
+    "message": "Select your date & time:",
+    "options": [
+      { "label": "Today 5PM", "next": "paymentOption" },
+      { "label": "Tomorrow 3PM", "next": "paymentOption" }
+    ]
+  },
+  {
+    "id": "paymentOption",
+    "message": "Would you like to pay now or later?",
+    "options": [
+      { "label": "Pay Now 💳", "next": "confirmNow" },
+      { "label": "Pay Later 💬", "next": "confirmLater" }
+    ]
+  },
+  {
+    "id": "confirmNow",
+    "message": "✅ Payment link sent. Your booking is confirmed!"
+  },
+  {
+    "id": "confirmLater",
+    "message": "We’ll hold your slot. You’ll get a reminder 45 mins before your appointment."
+  }
+]

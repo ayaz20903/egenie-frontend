@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #161725;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,101 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-section {
+  background-image: url("/hero-banner.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.showcase_content {
+  width: 100%;
+  max-width: 32rem;
+  margin: 100px auto;
+}
+
+.showcase_content:nth-child(2),
+.showcase_content:nth-child(3) {
+  margin-top: 250px;
+}
+
+.WhatsAppMarketingHeading span {
+  font-size: 80px;
+}
+
+.WebsiteChatbot .signin-buttons span {
+  background: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.AudienceSlider {
+  /* background-image: url("/whatsappbg.png"); */
+  background-position: center center;
+  background-repeat: repeat;
+}
+
+.WebsiteChatbot .WebsiteChatbot-img .chatbot-chat-img {
+  color: transparent;
+  position: absolute;
+  width: 400px;
+  right: 0;
+  bottom: 35px;
+}
+
+.WebsiteChatbot .WebsiteChatbot-img .chatbot-arrow-img {
+  position: absolute;
+  width: 330px;
+  height: auto;
+  top: 12px;
+  right: 0;
+}
+
+.IntegrationsSection-wrapper {
+  background-image: url("/whatsappbg.png");
+  background-position: center;
+  background-repeat: repeat;
+}
+
+/* Animated gradient border utility */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes gradient-rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.animated-gradient-border {
+  position: relative;
+  padding: 6px; /* Border thickness */
+  border-radius: 50px;
+  background: conic-gradient(from var(--angle), #6d28d9, #8eb4f2, #6d28d9);
+  animation: gradient-rotate 6s linear infinite;
+}
+
+.animated-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -10px; /* Spread the glow outside */
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle), #6d28d9, #3b82f6, #6d28d9);
+  filter: blur(18px);
+  opacity: 0.55;
+  z-index: -1; /* Keep glow behind the border */
+  animation: gradient-rotate 6s linear infinite;
+}
+
+.animated-gradient-border > .animated-gradient-inner {
+  border-radius: 48px; /* Slightly smaller to fit inside border */
 }

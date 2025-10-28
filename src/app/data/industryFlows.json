@@ -1,0 +1,604 @@
+{
+  "barbershop": [
+    {
+      "id": "start",
+      "message": "👋 Welcome to {shopName}! How can I help you today?",
+      "options": [
+        { "label": "Book Appointment", "next": "book" },
+        { "label": "View Services & Prices", "next": "services" },
+        { "label": "Locate Us", "next": "locate" },
+        { "label": "Speak to Barber", "next": "speak" },
+        { "label": "Offers & Discounts", "next": "offers" },
+        { "label": "Working Hours", "next": "hours" }
+      ]
+    },
+    {
+      "id": "book",
+      "message": "Let's get your appointment booked at {shopName}! What's your name?",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "Great {userName}! Which service would you like at {shopName}?",
+      "options": [
+        { "label": "Haircut", "next": "chooseBarber" },
+        { "label": "Shave", "next": "chooseBarber" },
+        { "label": "Beard Trim", "next": "chooseBarber" },
+        { "label": "Hair Wash", "next": "chooseBarber" }
+      ]
+    },
+    {
+      "id": "chooseBarber",
+      "message": "Perfect choice, {userName}! Choose your preferred barber:",
+      "options": [
+        { "label": "John ✂️", "next": "chooseTime" },
+        { "label": "Mike 💈", "next": "chooseTime" },
+        { "label": "Anyone Available", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "Excellent, {userName}! Select your date & time:",
+      "options": [
+        { "label": "Today 5PM", "next": "paymentOption" },
+        { "label": "Tomorrow 3PM", "next": "paymentOption" },
+        { "label": "This Weekend", "next": "paymentOption" }
+      ]
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done, {userName}! Would you like to pay now or later?",
+      "options": [
+        { "label": "Pay Now 💳", "next": "confirmNow" },
+        { "label": "Pay Later 💬", "next": "confirmLater" }
+      ]
+    },
+    {
+      "id": "confirmNow",
+      "message": "✅ Payment link sent to {userName}. Your booking at {shopName} is confirmed!"
+    },
+    {
+      "id": "confirmLater",
+      "message": "We'll hold your slot at {shopName}, {userName}. You'll get a reminder 45 mins before your appointment."
+    },
+    {
+      "id": "services",
+      "message": "Here are our services and prices at {shopName}:",
+      "options": [
+        { "label": "Haircut - $25", "next": "servicesInfo" },
+        { "label": "Shave - $15", "next": "servicesInfo" },
+        { "label": "Beard Trim - $20", "next": "servicesInfo" },
+        { "label": "Hair Wash - $10", "next": "servicesInfo" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "servicesInfo",
+      "message": "You can book any service directly from the main menu. Want to go back?",
+      "options": [
+        { "label": "Yes, back to menu", "next": "start" },
+        { "label": "No, speak to barber", "next": "speak" }
+      ]
+    },
+    {
+      "id": "locate",
+      "message": "You can find {shopName} at the following address:\n📍 123 Main Street, City\nDo you want directions via Google Maps?",
+      "options": [
+        { "label": "Yes, show directions", "next": "googleMaps" },
+        { "label": "No, back to menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "googleMaps",
+      "message": "Opening Google Maps link for {shopName}...\n[Google Maps Link]",
+      "options": [{ "label": "Back to Menu", "next": "start" }]
+    },
+    {
+      "id": "speak",
+      "message": "You can chat with our barber directly! How would you like to connect?",
+      "options": [
+        { "label": "WhatsApp Chat", "next": "whatsappChat" },
+        { "label": "Call Barber", "next": "callBarber" },
+        { "label": "Back to Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "whatsappChat",
+      "message": "Starting WhatsApp chat with {shopName} barber. Type your query below!",
+      "input": true,
+      "next": "speakEnd"
+    },
+    {
+      "id": "callBarber",
+      "message": "Calling {shopName} barber at +1234567890...",
+      "options": [{ "label": "Back to Menu", "next": "start" }]
+    },
+    {
+      "id": "speakEnd",
+      "message": "Our barber will reply to you shortly. Anything else?",
+      "options": [{ "label": "Back to Menu", "next": "start" }]
+    },
+    {
+      "id": "offers",
+      "message": "🎉 Current offers at {shopName}:",
+      "options": [
+        { "label": "20% off on Haircuts", "next": "offersInfo" },
+        { "label": "Buy 1 Get 1 Beard Trim", "next": "offersInfo" },
+        { "label": "Back to Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "offersInfo",
+      "message": "Hurry! Offers are valid for a limited time. Want to book now?",
+      "options": [
+        { "label": "Yes, book appointment", "next": "book" },
+        { "label": "Back to Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "hours",
+      "message": "⏰ Working hours at {shopName}:\nMon-Fri: 9AM - 8PM\nSat: 9AM - 6PM\nSun: Closed",
+      "options": [{ "label": "Back to Menu", "next": "start" }]
+    }
+  ],
+
+  "restaurant": [
+    {
+      "id": "start",
+      "message": "🍽️ Welcome to {shopName}! How can we serve you today?",
+      "options": [
+        { "label": "Make Reservation", "next": "reservation" },
+        { "label": "View Menu", "next": "menu" },
+        { "label": "Order Takeout", "next": "takeout" },
+        { "label": "Special Offers", "next": "offers" },
+        { "label": "Contact Us", "next": "contact" }
+      ]
+    },
+    {
+      "id": "reservation",
+      "message": "Let's reserve your table at {shopName}! What's your name?",
+      "input": true,
+      "next": "partySize"
+    },
+    {
+      "id": "partySize",
+      "message": "Great {userName}! How many people will be dining?",
+      "options": [
+        { "label": "2 people", "next": "chooseDate" },
+        { "label": "4 people", "next": "chooseDate" },
+        { "label": "6+ people", "next": "chooseDate" }
+      ]
+    },
+    {
+      "id": "chooseDate",
+      "message": "Perfect, {userName}! When would you like to dine?",
+      "options": [
+        { "label": "Today", "next": "chooseTime" },
+        { "label": "Tomorrow", "next": "chooseTime" },
+        { "label": "This Weekend", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "Excellent! What time works best for you?",
+      "options": [
+        { "label": "6:00 PM", "next": "confirmReservation" },
+        { "label": "7:30 PM", "next": "confirmReservation" },
+        { "label": "8:00 PM", "next": "confirmReservation" }
+      ]
+    },
+    {
+      "id": "confirmReservation",
+      "message": "✅ Your table is reserved at {shopName}, {userName}! We'll send you a confirmation shortly."
+    },
+    {
+      "id": "menu",
+      "message": "Here's our delicious menu at {shopName}:",
+      "options": [
+        { "label": "Starters", "next": "menuStarters" },
+        { "label": "Main Course", "next": "menuMain" },
+        { "label": "Desserts", "next": "menuDesserts" },
+        { "label": "Beverages", "next": "menuDrinks" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "menuStarters",
+      "message": "🥗 Starters:\n- Garlic Bread: $5\n- Caesar Salad: $7\n- Soup of the Day: $6",
+      "options": [
+        { "label": "Back to Menu", "next": "menu" },
+        { "label": "Make Reservation", "next": "reservation" }
+      ]
+    },
+    {
+      "id": "menuMain",
+      "message": "🍝 Main Course:\n- Grilled Chicken: $15\n- Pasta Alfredo: $13\n- Veggie Burger: $12",
+      "options": [
+        { "label": "Back to Menu", "next": "menu" },
+        { "label": "Make Reservation", "next": "reservation" }
+      ]
+    },
+    {
+      "id": "menuDesserts",
+      "message": "🍰 Desserts:\n- Chocolate Cake: $6\n- Ice Cream Sundae: $5\n- Fruit Salad: $4",
+      "options": [
+        { "label": "Back to Menu", "next": "menu" },
+        { "label": "Make Reservation", "next": "reservation" }
+      ]
+    },
+    {
+      "id": "menuDrinks",
+      "message": "🥤 Beverages:\n- Soft Drinks: $3\n- Coffee/Tea: $3\n- Smoothies: $5",
+      "options": [
+        { "label": "Back to Menu", "next": "menu" },
+        { "label": "Make Reservation", "next": "reservation" }
+      ]
+    },
+    {
+      "id": "takeout",
+      "message": "Order takeout from {shopName}! What would you like to do?",
+      "options": [
+        { "label": "View Menu for Takeout", "next": "menu" },
+        { "label": "Place Order Now", "next": "takeoutOrder" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "takeoutOrder",
+      "message": "Please enter your order details below:",
+      "input": true,
+      "next": "takeoutConfirm"
+    },
+    {
+      "id": "takeoutConfirm",
+      "message": "✅ Thank you, {userName}! Your takeout order at {shopName} has been placed. We'll notify you when it's ready."
+    },
+    {
+      "id": "offers",
+      "message": "🎉 Current offers at {shopName}:",
+      "options": [
+        { "label": "Combo Deals", "next": "offersInfo" },
+        { "label": "Happy Hour", "next": "offersInfo" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "offersInfo",
+      "message": "Hurry! These offers are valid for a limited time. Would you like to book a table or order takeout?",
+      "options": [
+        { "label": "Book Table", "next": "reservation" },
+        { "label": "Order Takeout", "next": "takeout" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "contact",
+      "message": "You can reach {shopName} via:",
+      "options": [
+        { "label": "Call Us 📞", "next": "callRestaurant" },
+        { "label": "WhatsApp Chat 💬", "next": "whatsappRestaurant" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "callRestaurant",
+      "message": "Calling {shopName} at +1234567890...",
+      "options": [{ "label": "Back to Main Menu", "next": "start" }]
+    },
+    {
+      "id": "whatsappRestaurant",
+      "message": "Starting WhatsApp chat with {shopName}. Type your message below:",
+      "input": true,
+      "next": "contactEnd"
+    },
+    {
+      "id": "contactEnd",
+      "message": "Our team will reply shortly, {userName}. Anything else?",
+      "options": [{ "label": "Back to Main Menu", "next": "start" }]
+    }
+  ],
+
+  "salon": [
+    {
+      "id": "start",
+      "message": "💅 Welcome to {shopName}! How can we pamper you today?",
+      "options": [
+        { "label": "Book Service", "next": "bookService" },
+        { "label": "View Services", "next": "services" },
+        { "label": "Special Packages", "next": "packages" },
+        { "label": "Gift Cards", "next": "giftCards" }
+      ]
+    },
+    {
+      "id": "bookService",
+      "message": "Let's book your appointment at {shopName}! What's your name?",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "Beautiful, {userName}! Which service would you like?",
+      "options": [
+        { "label": "Hair Styling", "next": "chooseStylist" },
+        { "label": "Manicure", "next": "chooseStylist" },
+        { "label": "Pedicure", "next": "chooseStylist" },
+        { "label": "Facial Treatment", "next": "chooseStylist" }
+      ]
+    },
+    {
+      "id": "chooseStylist",
+      "message": "Perfect choice, {userName}! Choose your stylist:",
+      "options": [
+        { "label": "Sarah 💇‍♀️", "next": "chooseTime" },
+        { "label": "Emma 💅", "next": "chooseTime" },
+        { "label": "Any Available", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "Great! When would you like your appointment?",
+      "options": [
+        { "label": "Morning (9-12)", "next": "confirmAppointment" },
+        { "label": "Afternoon (1-4)", "next": "confirmAppointment" },
+        { "label": "Evening (5-8)", "next": "confirmAppointment" }
+      ]
+    },
+    {
+      "id": "confirmAppointment",
+      "message": "✨ Your appointment at {shopName} is confirmed, {userName}! We can't wait to pamper you!"
+    }
+  ],
+
+  "nailart": [
+    {
+      "id": "start",
+      "message": "💅 Welcome to {shopName}! Ready for some nail art magic?",
+      "options": [
+        { "label": "Book Nail Art", "next": "bookNail" },
+        { "label": "View Designs", "next": "viewDesigns" },
+        { "label": "Special Events", "next": "events" },
+        { "label": "Pricing", "next": "pricing" }
+      ]
+    },
+    {
+      "id": "bookNail",
+      "message": "Let's create something beautiful at {shopName}! What's your name?",
+      "input": true,
+      "next": "chooseDesign"
+    },
+    {
+      "id": "chooseDesign",
+      "message": "Exciting, {userName}! What style are you looking for?",
+      "options": [
+        { "label": "Classic French", "next": "chooseArtist" },
+        { "label": "Gel Manicure", "next": "chooseArtist" },
+        { "label": "Nail Art Design", "next": "chooseArtist" },
+        { "label": "Acrylic Extensions", "next": "chooseArtist" }
+      ]
+    },
+    {
+      "id": "chooseArtist",
+      "message": "Perfect! Choose your nail artist:",
+      "options": [
+        { "label": "Luna 🎨", "next": "chooseTime" },
+        { "label": "Zara ✨", "next": "chooseTime" },
+        { "label": "Any Artist", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like your nail art session?",
+      "options": [
+        { "label": "This Week", "next": "paymentOption" },
+        { "label": "Next Week", "next": "paymentOption" },
+        { "label": "Special Event Prep", "next": "paymentOption" }
+      ]
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done, {userName}! Would you like to pay now or later?",
+      "options": [
+        { "label": "Pay Now 💳", "next": "confirmNow" },
+        { "label": "Pay Later 💬", "next": "confirmLater" }
+      ]
+    },
+    {
+      "id": "confirmNow",
+      "message": "✅ Payment link sent to {userName}. Your nail art appointment at {shopName} is confirmed!"
+    },
+    {
+      "id": "confirmLater",
+      "message": "We'll hold your slot at {shopName}, {userName}. You'll get a reminder 45 mins before your appointment."
+    },
+    {
+      "id": "viewDesigns",
+      "message": "Here are some of our popular nail art designs at {shopName}:",
+      "options": [
+        { "label": "Classic French", "next": "bookNail" },
+        { "label": "Gel Manicure", "next": "bookNail" },
+        { "label": "Nail Art Design", "next": "bookNail" },
+        { "label": "Acrylic Extensions", "next": "bookNail" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "events",
+      "message": "Planning for a special event? We offer customized nail art packages for:",
+      "options": [
+        { "label": "Weddings", "next": "eventBooking" },
+        { "label": "Parties", "next": "eventBooking" },
+        { "label": "Festivals", "next": "eventBooking" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "eventBooking",
+      "message": "Great! Let's book your special event nail art session. What's your name?",
+      "input": true,
+      "next": "chooseEventDesign"
+    },
+    {
+      "id": "chooseEventDesign",
+      "message": "Which style would you like for your special event, {userName}?",
+      "options": [
+        { "label": "Classic French", "next": "chooseArtist" },
+        { "label": "Gel Manicure", "next": "chooseArtist" },
+        { "label": "Nail Art Design", "next": "chooseArtist" },
+        { "label": "Acrylic Extensions", "next": "chooseArtist" }
+      ]
+    },
+    {
+      "id": "pricing",
+      "message": "Here's our pricing at {shopName}:",
+      "options": [
+        { "label": "Classic French: $25", "next": "bookNail" },
+        { "label": "Gel Manicure: $35", "next": "bookNail" },
+        { "label": "Nail Art Design: $40+", "next": "bookNail" },
+        { "label": "Acrylic Extensions: $50+", "next": "bookNail" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    }
+  ],
+
+  "makeup": [
+    {
+      "id": "start",
+      "message": "💄 Welcome to {shopName}! Let's make you feel beautiful!",
+      "options": [
+        { "label": "Book Makeup", "next": "bookMakeup" },
+        { "label": "Bridal Makeup", "next": "bridal" },
+        { "label": "Event Makeup", "next": "event" },
+        { "label": "Tutorials", "next": "tutorials" }
+      ]
+    },
+    {
+      "id": "bookMakeup",
+      "message": "Let's create your perfect look at {shopName}! What's your name?",
+      "input": true,
+      "next": "chooseOccasion"
+    },
+    {
+      "id": "chooseOccasion",
+      "message": "Wonderful, {userName}! What's the occasion?",
+      "options": [
+        { "label": "Wedding", "next": "chooseArtist" },
+        { "label": "Party/Event", "next": "chooseArtist" },
+        { "label": "Photoshoot", "next": "chooseArtist" },
+        { "label": "Date Night", "next": "chooseArtist" }
+      ]
+    },
+    {
+      "id": "chooseArtist",
+      "message": "Perfect! Choose your makeup artist:",
+      "options": [
+        { "label": "Sophia 💄", "next": "chooseTime" },
+        { "label": "Isabella ✨", "next": "chooseTime" },
+        { "label": "Any Artist", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "When do you need your makeup done?",
+      "options": [
+        { "label": "This Week", "next": "confirmMakeup" },
+        { "label": "Next Week", "next": "confirmMakeup" },
+        { "label": "Special Date", "next": "confirmMakeup" }
+      ]
+    },
+    {
+      "id": "confirmMakeup",
+      "message": "💄 Your makeup appointment at {shopName} is confirmed, {userName}! You're going to look absolutely stunning!"
+    }
+  ],
+  "gym": [
+    {
+      "id": "start",
+      "message": "💪 Welcome to {shopName}! Ready to get fit?",
+      "options": [
+        { "label": "Join Gym", "next": "membership" },
+        { "label": "Personal Training", "next": "training" },
+        { "label": "Classes", "next": "classes" },
+        { "label": "Trial Session", "next": "trial" }
+      ]
+    },
+    {
+      "id": "membership",
+      "message": "Let's get you started at {shopName}! What's your name?",
+      "input": true,
+      "next": "choosePlan"
+    },
+    {
+      "id": "choosePlan",
+      "message": "Great, {userName}! Which membership plan interests you?",
+      "options": [
+        { "label": "Basic Plan", "next": "chooseTime" },
+        { "label": "Premium Plan", "next": "chooseTime" },
+        { "label": "VIP Plan", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "Perfect! When would you like to start?",
+      "options": [
+        { "label": "Today", "next": "confirmMembership" },
+        { "label": "This Week", "next": "confirmMembership" },
+        { "label": "Next Week", "next": "confirmMembership" }
+      ]
+    },
+    {
+      "id": "confirmMembership",
+      "message": "🏋️‍♀️ Welcome to {shopName}, {userName}! Your fitness journey starts now!"
+    }
+  ],
+  "spa": [
+    {
+      "id": "start",
+      "message": "🧘 Welcome to {shopName}! Time to relax and rejuvenate!",
+      "options": [
+        { "label": "Book Treatment", "next": "bookTreatment" },
+        { "label": "Spa Packages", "next": "packages" },
+        { "label": "Couples Spa", "next": "couples" },
+        { "label": "Wellness Programs", "next": "wellness" }
+      ]
+    },
+    {
+      "id": "bookTreatment",
+      "message": "Let's pamper you at {shopName}! What's your name?",
+      "input": true,
+      "next": "chooseTreatment"
+    },
+    {
+      "id": "chooseTreatment",
+      "message": "Relaxing, {userName}! Which treatment would you like?",
+      "options": [
+        { "label": "Deep Tissue Massage", "next": "chooseTherapist" },
+        { "label": "Facial Treatment", "next": "chooseTherapist" },
+        { "label": "Body Wrap", "next": "chooseTherapist" },
+        { "label": "Aromatherapy", "next": "chooseTherapist" }
+      ]
+    },
+    {
+      "id": "chooseTherapist",
+      "message": "Perfect! Choose your therapist:",
+      "options": [
+        { "label": "Maria 🧘‍♀️", "next": "chooseTime" },
+        { "label": "Elena ✨", "next": "chooseTime" },
+        { "label": "Any Available", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like your spa treatment?",
+      "options": [
+        { "label": "This Week", "next": "confirmSpa" },
+        { "label": "Next Week", "next": "confirmSpa" },
+        { "label": "Weekend Retreat", "next": "confirmSpa" }
+      ]
+    },
+    {
+      "id": "confirmSpa",
+      "message": "🧘 Your spa treatment at {shopName} is booked, {userName}! Prepare for ultimate relaxation!"
+    }
+  ]
+}
