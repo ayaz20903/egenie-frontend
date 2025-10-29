@@ -6,6 +6,7 @@ import AudienceSlider from "./components/AudienceSlider";
 import IntegrationsSection from "./components/IntegrationsSection";
 import FeatureShowcase from "./components/FeatureShowcase";
 import AudienceHighlight from "./components/AudienceHighlight";
+import PricingSection from "./components/PricingSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <FeatureShowcase />
       <AudienceHighlight />
       <IntegrationsSection />
+
+      <PricingSection />
 
       {/* <WhatsAppChat /> */}
     </>

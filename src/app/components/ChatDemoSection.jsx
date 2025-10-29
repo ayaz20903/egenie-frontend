@@ -138,7 +138,7 @@ export default function ChatDemoSection() {
     ));
 
   return (
-    <div className=" container m-auto flex flex-col lg:flex-row items-center justify-center gap-12 p-8 lg:p-16 bg-[#161725] text-white min-h-screen">
+    <section className=" container m-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 bg-[#161725] text-white min-h-screen">
       {/* Left Section */}
       <div className="w-full lg:w-1/2 max-w-2xl">
         <div className="text-center lg:text-left">
@@ -303,6 +303,6 @@ export default function ChatDemoSection() {
           </motion.div>
         )}
       </div>
-    </div>
+    </section>
   );
 }

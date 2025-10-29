@@ -1,4 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&display=swap");
 @import "tailwindcss";
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
   --background: #ffffff;
@@ -22,7 +29,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero-section {
@@ -120,4 +126,34 @@ body {
 
 .animated-gradient-border > .animated-gradient-inner {
   border-radius: 48px; /* Slightly smaller to fit inside border */
+}
+
+@media screen and (max-width: 992px) {
+  .WebsiteChatbot .WebsiteChatbot-img .chatbot-chat-img {
+    width: 50%;
+    height: auto;
+    bottom: 0;
+  }
+
+  .WebsiteChatbot .WebsiteChatbot-img .chatbot-arrow-img {
+    width: 50%;
+    height: auto;
+  }
+
+  .WhatsAppMarketingHeading span {
+    font-size: 60px;
+  }
+
+  .showcase_content {
+    margin: 50px auto;
+  }
+
+  .showcase_content:nth-child(2),
+  .showcase_content:nth-child(3) {
+    margin-top: 100px;
+  }
+
+  .animated-gradient-border:before {
+    inset: 0;
+  }
 }

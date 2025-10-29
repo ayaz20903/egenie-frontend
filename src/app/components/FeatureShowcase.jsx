@@ -77,12 +77,12 @@ export default function FeatureShowcase() {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="pt-10 pb-30 bg-white">
-      <h3 class="text-3xl lg:text-5xl pb-15 text-center font-bold mb-6 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent WhatsAppMarketingHeading">
+    <section className="pt-10 pb-15 lg:pb-30 px-6 lg:px-0 bg-white">
+      <h3 className="text-3xl lg:text-5xl pb-5 lg:pb-15 text-center font-bold mb-6 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent WhatsAppMarketingHeading">
         All your automation magic, in one place
       </h3>
       <div className="flex justify-center bg-white">
-        <div className="container mx-auto w-full grid md:grid-cols-2 gap-10 px-6 items-start">
+        <div className="container mx-auto w-full grid md:grid-cols-2 gap-10 px-0 lg:px-6 items-start">
           {/* LEFT SIDE */}
           <div className="flex flex-col space-y-4">
             {features.map((item) => (
@@ -122,7 +122,7 @@ export default function FeatureShowcase() {
           </div>
 
           {/* RIGHT SIDE - DYNAMIC IMAGE */}
-          <div className="relative h-[560px] w-full rounded-3xl overflow-hidden shadow-xl bg-[#161725] flex items-center justify-center">
+          <div className="hidden lg:block relative h-full w-full rounded-3xl overflow-hidden shadow-xl bg-[#161725] flex items-center justify-center">
             <AnimatePresence mode="wait">
               {active && (
                 <motion.div

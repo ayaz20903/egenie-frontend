@@ -72,11 +72,11 @@ export default function AudienceSlider() {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="pt-30 pb-20 bg-[#ffffff] ">
+    <section className="pt-20 lg:pt-30 pb-20 bg-[#ffffff] ">
       <div className="container mx-auto">
         <div className="animated-gradient-border">
-          <div className="AudienceSlider bg-[#161725] animated-gradient-inner w-full flex flex-col items-center justify-center overflow-hidden px-6 py-18 rounded-[50px]">
-            <h2 className="text-5xl md:text-7xl w-[70%] font-extrabold text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-12 leading-tight">
+          <div className="AudienceSlider bg-[#161725] animated-gradient-inner w-full flex flex-col items-center justify-center overflow-hidden px-6  py-12 lg:py-18 rounded-[50px]">
+            <h2 className="text-3xl md:text-7xl w-[70%] font-extrabold text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-12 leading-tight">
               Be Present on Every Channel That Matters
             </h2>
 

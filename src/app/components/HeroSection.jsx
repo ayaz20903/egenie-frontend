@@ -6,7 +6,7 @@ import genieImage from "../../../public/new-genie.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen text-center hero-section overflow-hidden">
+    <section className="relative px-6 flex flex-col items-center justify-center min-h-screen text-center hero-section overflow-hidden">
       {/* Floating Genie Animation */}
       <motion.div
         initial={{ y: 0, opacity: 1 }}
