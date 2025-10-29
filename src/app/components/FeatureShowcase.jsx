@@ -77,7 +77,10 @@ export default function FeatureShowcase() {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="pt-10 pb-15 lg:pb-30 px-6 lg:px-0 bg-white">
+    <section
+      id="features"
+      className="pt-10 pb-15 lg:pb-30 px-6 lg:px-0 bg-white"
+    >
       <h3 className="text-3xl lg:text-5xl pb-5 lg:pb-15 text-center font-bold mb-6 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent WhatsAppMarketingHeading">
         All your automation magic, in one place
       </h3>

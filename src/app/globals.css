@@ -7,6 +7,10 @@ body {
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -86,7 +90,7 @@ body {
 }
 
 .IntegrationsSection-wrapper {
-  background-image: url("/whatsappbg.png");
+  /* background-image: url("/whatsappbg.png"); */
   background-position: center;
   background-repeat: repeat;
 }

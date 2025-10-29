@@ -57,7 +57,10 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#1e293b] text-white">
+    <section
+      id="pricing"
+      className="py-24 bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#1e293b] text-white"
+    >
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -83,15 +86,11 @@ export default function PricingSection() {
             className="relative w-16 h-8 bg-gray-700 rounded-full cursor-pointer transition"
           >
             <motion.div
-              layout
+              animate={{ x: isYearly ? 32 : 0 }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-indigo-500`}
-              style={{
-                transform: isYearly ? "translateX(32px)" : "translateX(0px)",
-              }}
+              className="absolute top-1 left-1 w-6 h-6 rounded-full bg-indigo-500"
             />
           </div>
-
           <span
             className={`text-sm md:text-base ${
               isYearly ? "text-indigo-400 font-semibold" : "text-gray-400"

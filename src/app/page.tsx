@@ -7,10 +7,12 @@ import IntegrationsSection from "./components/IntegrationsSection";
 import FeatureShowcase from "./components/FeatureShowcase";
 import AudienceHighlight from "./components/AudienceHighlight";
 import PricingSection from "./components/PricingSection";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
     <>
+      <Header />
       <HeroSection />
       <WhatsAppMarketingSection />
 

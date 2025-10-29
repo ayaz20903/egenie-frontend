@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import whatsappSection from "../../../public/whatsapp-section.png";
 import whatsappSection4 from "../../../public/whatsappSection4.png";
+import whatsappSection5 from "../../../public/whatsappSection5.png";
 
 export default function WhatsAppMarketingSection() {
   const videoRef = useRef(null);
@@ -13,17 +14,7 @@ export default function WhatsAppMarketingSection() {
     const videoEl = videoRef.current;
     if (!videoEl) return;
 
-    const handleEnded = () => {
-      // Ensure we stop on the last frame and don't restart
-      setHasPlayed(true);
-      try {
-        videoEl.pause();
-        // Seek to near the end to guarantee last frame shows
-        if (!isNaN(videoEl.duration)) {
-          videoEl.currentTime = Math.max(0, videoEl.duration - 0.05);
-        }
-      } catch {}
-    };
+    const handleEnded = () => {};
 
     videoEl.addEventListener("ended", handleEnded);
 
@@ -31,7 +22,6 @@ export default function WhatsAppMarketingSection() {
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting && !hasPlayed) {
-          // Autoplay once when visible
           videoEl.play().catch(() => {});
         }
       },
@@ -60,7 +50,7 @@ export default function WhatsAppMarketingSection() {
       {/* Two-column layout */}
       <div className="hidden lg:grid  grid-flow-row-dense lg:grid-cols-7 gap-5 items-center ">
         {/* Left Side */}
-        <div className=" col-span-3 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-tr-[80px] rounded-br-[80px] p-10 shadow-xl">
+        <div className="col-span-3 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-tr-[80px] rounded-br-[80px] p-10 shadow-xl">
           <div className="showcase_content">
             <div className="text-3xl bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Drip Campaigns
@@ -92,7 +82,6 @@ export default function WhatsAppMarketingSection() {
                 and let automation do the work
               </li>
             </ul>
-
             <a
               href="#"
               className="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold"
@@ -178,14 +167,15 @@ export default function WhatsAppMarketingSection() {
 
         {/* Right Side */}
         <div className=" col-span-4 h-full flex flex-col justify-between items-center">
-          <video
+          {/* <video
             ref={videoRef}
             src="/video1.mp4"
             className="w-full h-auto "
             muted
             playsInline
             preload="metadata"
-          />
+          /> */}
+          <Image src={whatsappSection5} alt="Genie" className="" />
 
           <Image src={whatsappSection4} alt="Genie" className="" />
           <Image src={whatsappSection} alt="Genie" className="" />
