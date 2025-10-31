@@ -26,7 +26,7 @@ export default function PricingSection() {
     {
       name: "Smart Genie",
       monthly: 15.99,
-      yearly: 15.99 * 12 * 0.8, // 20% discount
+      yearly: 15.99 * 12 * 0.8,
       desc: "Ideal for professionals who need consistent help managing content, research, and automation.",
       gradient: "from-[#3730a3] to-[#6d28d9]",
       features: [
@@ -41,7 +41,7 @@ export default function PricingSection() {
     {
       name: "Super Genie",
       monthly: 22.99,
-      yearly: 22.99 * 12 * 0.8, // 20% discount
+      yearly: 22.99 * 12 * 0.8,
       desc: "For teams and power users. Get unlimited queries, advanced AI models, and full integration power.",
       gradient: "from-[#6d28d9] to-[#db2777]",
       features: [
@@ -57,22 +57,39 @@ export default function PricingSection() {
   ];
 
   return (
-    <section
-      id="pricing"
-      className="py-24 bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#1e293b] text-white"
-    >
+    <section id="pricing" className="py-24 text-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          Choose Your <span className="text-indigo-400">Genie Mode</span>
-        </h2>
-        <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+        <motion.h2
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-6 "
+        >
+          Choose Your{" "}
+          <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
+            Genie Mode
+          </span>
+        </motion.h2>
+
+        {/* Subtext */}
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+        >
           Unlock the power of eGenie — whether you're exploring, creating, or
           automating your workflow. Find the plan that fits your journey.
-        </p>
+        </motion.p>
 
         {/* Toggle Switch */}
-        <div className="flex justify-center items-center gap-4 mb-16">
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex justify-center items-center gap-4 mb-16 select-none"
+        >
           <span
             className={`text-sm md:text-base ${
               !isYearly ? "text-indigo-400 font-semibold" : "text-gray-400"
@@ -83,14 +100,16 @@ export default function PricingSection() {
 
           <div
             onClick={() => setIsYearly(!isYearly)}
-            className="relative w-16 h-8 bg-gray-700 rounded-full cursor-pointer transition"
+            className="relative w-16 h-8 bg-gray-700 rounded-full cursor-pointer transition-colors duration-300 hover:bg-gray-600"
           >
+            {/* Toggle animation remains */}
             <motion.div
-              animate={{ x: isYearly ? 32 : 0 }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              className="absolute top-1 left-1 w-6 h-6 rounded-full bg-indigo-500"
+              animate={{ x: isYearly ? 32 : 0, rotate: isYearly ? 360 : 0 }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="absolute top-1 left-1 w-6 h-6 rounded-full bg-indigo-500 shadow-lg"
             />
           </div>
+
           <span
             className={`text-sm md:text-base ${
               isYearly ? "text-indigo-400 font-semibold" : "text-gray-400"
@@ -98,16 +117,17 @@ export default function PricingSection() {
           >
             Yearly <span className="text-xs text-yellow-400">(Save 20%)</span>
           </span>
-        </div>
+        </motion.div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-10">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -8, scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-              className={`relative rounded-3xl overflow-hidden shadow-xl border border-gray-800 bg-gradient-to-br ${plan.gradient} p-8 flex flex-col justify-between`}
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 + i * 0.2, duration: 0.7 }}
+              className={`relative rounded-3xl overflow-hidden border border-gray-800 bg-gradient-to-br ${plan.gradient} p-8 flex flex-col justify-between`}
             >
               {plan.highlight && (
                 <div className="absolute top-4 right-4 bg-yellow-400 text-black text-xs font-semibold px-3 py-1 rounded-full">
@@ -143,7 +163,10 @@ export default function PricingSection() {
                 </ul>
               </div>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px #9A5CFF" }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2 }}
                 className={`w-full py-3 mt-auto rounded-xl text-lg font-medium transition ${
                   plan.highlight
                     ? "bg-yellow-400 text-black hover:bg-yellow-300"
@@ -151,7 +174,7 @@ export default function PricingSection() {
                 }`}
               >
                 {plan.cta}
-              </button>
+              </motion.button>
             </motion.div>
           ))}
         </div>

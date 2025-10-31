@@ -19,7 +19,7 @@ export default function HeroSection() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="relative w-[300px] h-[300px] md:w-[5500px] md:h-[550px]"
+        className="relative w-[300px] h-[300px] md:w-[5500px] md:h-[550px]  z-40"
       >
         <Image
           src={genieImage}
@@ -38,7 +38,7 @@ export default function HeroSection() {
       >
         From “Hi” to “Buy”{" "}
         <span className="bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent">
-          eGenie Makes It Happen.
+          eGenie Makes It Happen
         </span>
       </motion.h1>
 
@@ -47,10 +47,10 @@ export default function HeroSection() {
         initial={{ y: 30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.9, duration: 1 }}
-        className="mt-4 text-[#D1D5DB] text-lg md:text-xl max-w-2xl"
+        className="mt-4 text-[#D1D5DB] text-lg md:text-xl max-w-3xl"
       >
         Create smart, personalized chatbots for WhatsApp, Instagram, and
-        Facebook — powered by AI that feels human.
+        Facebook
       </motion.p>
 
       {/* CTA Button */}
@@ -68,7 +68,7 @@ export default function HeroSection() {
         whileTap={{ scale: 0.98 }}
         className="mt-10 px-8 py-3 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-white font-semibold rounded-full shadow-lg transition-all z-9"
       >
-        Get Started
+        Get Started Free
       </motion.button>
 
       {/* Soft Glow behind Genie */}

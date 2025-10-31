@@ -8,22 +8,33 @@ import FeatureShowcase from "./components/FeatureShowcase";
 import AudienceHighlight from "./components/AudienceHighlight";
 import PricingSection from "./components/PricingSection";
 import Header from "./components/Header";
+import ContactSection from "./components/ContactSection";
+import ChatAnimation from "./components/ChatAnimation";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <HeroSection />
-      <WhatsAppMarketingSection />
+      <div className="bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#1e293b]">
+        <HeroSection />
 
-      <ChatDemoSection />
-      <WebsiteChatbot />
+        <ChatAnimation />
+        <ChatDemoSection />
+        <WebsiteChatbot />
+      </div>
       <AudienceSlider />
       <FeatureShowcase />
       <AudienceHighlight />
-      <IntegrationsSection />
+      <WhatsAppMarketingSection />
 
-      <PricingSection />
+      <div className="bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#1e293b]">
+        <IntegrationsSection />
+        <PricingSection />
+        <ContactSection />
+      </div>
+
+      <Footer />
 
       {/* <WhatsAppChat /> */}
     </>

@@ -10,7 +10,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A]/60 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 w-full z-30 bg-[#0A0A0A]/60 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -34,9 +34,9 @@ export default function Header() {
           <Link href="#demo" className="hover:text-white transition">
             Demo
           </Link>
-          {/* <Link href="#contact" className="hover:text-white transition">
+          <Link href="#contact" className="hover:text-white transition">
             Contact
-          </Link> */}
+          </Link>
           <Link
             href="#get-started"
             className="px-5 py-2 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition"
@@ -113,13 +113,13 @@ export default function Header() {
             >
               Demo
             </Link>
-            {/* <Link
+            <Link
               href="#contact"
               onClick={() => setIsOpen(false)}
               className="block hover:text-white"
             >
               Contact
-            </Link> */}
+            </Link>
             <Link
               href="#get-started"
               onClick={() => setIsOpen(false)}

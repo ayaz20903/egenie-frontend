@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import MessageBubble from "./MessageBubble";
 import industryFlows from "../data/industryFlows.json";
-import genieImage from "../../../public/genie2.png"; // replace with your genie image path
+import genieImage from "../../../public/genie2.png";
 
 const industryCategories = [
   { value: "barbershop", label: "Barbershop", icon: "💈" },
@@ -28,18 +28,15 @@ export default function ChatDemoSection() {
   const chatEndRef = useRef(null);
   const chatBodyRef = useRef(null);
 
-  const getCurrentFlow = () => {
-    return industryFlows[selectedCategory] || industryFlows.barbershop;
-  };
+  const getCurrentFlow = () =>
+    industryFlows[selectedCategory] || industryFlows.barbershop;
 
-  const personalizeMessage = (message, userName, shopName) => {
-    return message
+  const personalizeMessage = (message, userName, shopName) =>
+    message
       .replace(/{userName}/g, userName || "")
       .replace(/{shopName}/g, shopName || "Your Shop Name");
-  };
 
   const handleStartDemo = () => {
-    // Reset all state
     setDisplayShopName(shopName || "Your Shop Name");
     setUserData({});
     setUserInput("");
@@ -93,7 +90,6 @@ export default function ChatDemoSection() {
     e.preventDefault();
     if (!userInput.trim()) return;
 
-    // Store user name when they input it
     if (
       currentStep?.id === "book" ||
       currentStep?.id === "reservation" ||
@@ -111,7 +107,7 @@ export default function ChatDemoSection() {
     if (nextStep) {
       const personalizedMessage = personalizeMessage(
         nextStep.message,
-        userInput, // Use the input as name for personalization
+        userInput,
         displayShopName
       );
 
@@ -130,7 +126,7 @@ export default function ChatDemoSection() {
       <motion.div
         key={i}
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
         <MessageBubble msg={msg} onOptionClick={handleOptionClick} />
@@ -140,10 +136,15 @@ export default function ChatDemoSection() {
   return (
     <section
       id="demo"
-      className=" container m-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 bg-[#161725] text-white min-h-screen"
+      className="container m-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 text-white min-h-screen"
     >
       {/* Left Section */}
-      <div className="w-full lg:w-1/2 max-w-2xl">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-full lg:w-1/2 max-w-2xl"
+      >
         <div className="text-center lg:text-left">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             See How Your Shop's Chatbot Works!
@@ -153,12 +154,18 @@ export default function ChatDemoSection() {
             <br />
             Experience the power of AI-driven customer engagement.
           </p>
-          <div className="space-y-4">
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="space-y-4"
+          >
             <div className="flex flex-col sm:flex-row gap-4">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-6 py-4 rounded-2xl w-full bg-[#151523] border-2 border-gray-600 text-white focus:border-purple-500 focus:outline-none transition-all duration-300 text-lg"
+                className="px-6 py-4 rounded-2xl w-full bg-[#151523] border-2 border-gray-600 text-white focus:border-purple-500 focus:outline-none text-lg"
               >
                 {industryCategories.map((category) => (
                   <option key={category.value} value={category.value}>
@@ -167,13 +174,14 @@ export default function ChatDemoSection() {
                 ))}
               </select>
             </div>
+
             <div className="flex flex-col sm:flex-row gap-4">
               <input
                 type="text"
                 value={shopName}
                 onChange={(e) => setShopName(e.target.value)}
                 placeholder="Enter your shop name"
-                className="px-6 py-4 rounded-2xl w-full bg-[#151523] border-2 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none transition-all duration-300 text-lg"
+                className="px-6 py-4 rounded-2xl w-full bg-[#151523] border-2 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none text-lg"
               />
               <button
                 onClick={handleStartDemo}
@@ -182,26 +190,27 @@ export default function ChatDemoSection() {
                 See Demo
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Right Section - Chat */}
-      <div className="w-full lg:w-1/2 flex justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+        className="w-full lg:w-1/2 flex justify-center"
+      >
         {!startDemo ? (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-[340px] h-[640px]  bg-white rounded-[40px] p-1 shadow-2xl flex flex-col items-center justify-center "
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-[340px] h-[640px] bg-white rounded-[40px] p-1 shadow-2xl flex flex-col items-center justify-center"
           >
-            <div className="w-full h-full bg-whitesmoke rounded-[32px]  flex flex-col items-center justify-center ">
-              <Image src={genieImage} alt="Genie" className="" />
-
+            <div className="w-full h-full bg-whitesmoke rounded-[32px] flex flex-col items-center justify-center">
+              <Image src={genieImage} alt="Genie" />
               <div className="text-center pt-8">
-                {/* <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6 mx-auto"> */}
-                {/* <span className="text-3xl">💬</span> */}
-                {/* </div> */}
                 <h3 className="text-2xl font-bold text-gray-700 mb-4">
                   Wish for More Leads? eGenie Grants It Instantly.
                 </h3>
@@ -210,65 +219,49 @@ export default function ChatDemoSection() {
           </motion.div>
         ) : (
           <motion.div
-            initial={{ opacity: 0, y: 30, rotateX: 5 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ type: "spring", stiffness: 120, damping: 14 }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative"
           >
             {/* Phone Frame */}
-            <div className="w-[340px] h-[640px] bg-[#fff9f4] rounded-[40px] p-1 shadow-2xl">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              className="w-[340px] h-[640px] bg-[#fff9f4] rounded-[40px] p-1 shadow-2xl"
+            >
               <div className="w-full h-full bg-white rounded-[32px] overflow-hidden flex flex-col relative">
+                {/* Header */}
                 <motion.div
-                  initial="hidden"
-                  animate="show"
-                  variants={{
-                    hidden: { opacity: 0 },
-                    show: { opacity: 1, transition: { staggerChildren: 0.06 } },
-                  }}
+                  initial={{ opacity: 0, y: -20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                   className="bg-[#075E54] text-white py-3 px-4 flex items-center gap-3"
                 >
-                  <motion.div
-                    variants={{
-                      hidden: { y: -10, opacity: 0 },
-                      show: { y: 0, opacity: 1 },
-                    }}
-                    className="w-8 h-8 rounded-full bg-green-300 flex items-center justify-center text-black font-bold text-sm"
-                  >
+                  <div className="w-8 h-8 rounded-full bg-green-300 flex items-center justify-center text-black font-bold text-sm">
                     {industryCategories.find(
                       (cat) => cat.value === selectedCategory
                     )?.icon || "💈"}
-                  </motion.div>
-                  <motion.div
-                    variants={{
-                      hidden: { y: -10, opacity: 0 },
-                      show: { y: 0, opacity: 1 },
-                    }}
-                    className="flex-1"
-                  >
+                  </div>
+                  <div className="flex-1">
                     <p className="font-semibold text-sm">{displayShopName}</p>
                     <p className="text-xs text-green-200">online</p>
-                  </motion.div>
-                  <motion.div
-                    variants={{
-                      hidden: { y: -10, opacity: 0 },
-                      show: { y: 0, opacity: 1 },
-                    }}
-                    className="flex items-center gap-2"
-                  >
+                  </div>
+                  <div className="flex items-center gap-2">
                     <span className="text-white">📞</span>
                     <span className="text-white">⋮</span>
-                  </motion.div>
+                  </div>
                 </motion.div>
 
                 {/* Chat Body */}
                 <div
                   ref={chatBodyRef}
-                  className="flex-1 overflow-y-auto overscroll-contain px-3 py-4 bg-cover relative"
+                  className="flex-1 overflow-y-auto px-3 py-4 bg-cover relative"
                   style={{
                     backgroundImage: "url('/whatsappbg.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
                   }}
                 >
                   {renderChat()}
@@ -302,10 +295,10 @@ export default function ChatDemoSection() {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }

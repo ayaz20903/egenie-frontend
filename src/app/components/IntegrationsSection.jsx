@@ -35,7 +35,7 @@ export default function IntegrationsSection() {
     <section className="container  m-auto w-full  flex flex-col justify-center px-6 md:px-12 lg:px-20  IntegrationsSection py-30">
       <div className=" w-full bg-white rounded-3xl shadow-lg flex flex-col md:flex-row items-center justify-between px-10 IntegrationsSection-wrapper ">
         {/* LEFT CONTENT */}
-        <div className="flex-1 mb-10 md:mb-0 p-4">
+        <div className="flex-1  mb-0 lg:mb-10 md:mb-0 p-4">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent leading-18 mb-4">
             Integrations
           </h2>
