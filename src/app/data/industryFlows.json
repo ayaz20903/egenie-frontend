@@ -149,153 +149,181 @@
       "message": "🍽️ Welcome to {shopName}! How can we serve you today?",
       "options": [
         { "label": "Make Reservation", "next": "reservation" },
+        { "label": "Delivery", "next": "takeout" },
         { "label": "View Menu", "next": "menu" },
-        { "label": "Order Takeout", "next": "takeout" },
-        { "label": "Special Offers", "next": "offers" },
+        { "label": "Contact Us", "next": "contact" }
+      ]
+    },
+
+    {
+      "id": "takeout",
+      "message": "Great choice, {userName}! What would you like to order today?",
+      "options": [
+        { "label": "Starters 🥗", "next": "takeoutStarters" },
+        { "label": "Main Course 🍝", "next": "takeoutMain" },
+        { "label": "Desserts 🍰", "next": "takeoutDesserts" },
+        { "label": "Beverages 🥤", "next": "takeoutDrinks" },
+        { "label": "View Cart 🛒", "next": "viewCart" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+
+    {
+      "id": "takeoutStarters",
+      "message": "🥗 Starters:\n1️⃣ Garlic Bread — $5\n2️⃣ Caesar Salad — $7\n3️⃣ Soup of the Day — $6\n\nSelect an item to add to your order:",
+      "image": "/images/starters.jpg",
+      "options": [
+        { "label": "Garlic Bread", "next": "addedToCart" },
+        { "label": "Caesar Salad", "next": "addedToCart" },
+        { "label": "Soup of the Day", "next": "addedToCart" },
+        { "label": "Back to Menu", "next": "takeout" }
+      ]
+    },
+
+    {
+      "id": "takeoutMain",
+      "message": "🍝 Main Course:\n1️⃣ Grilled Chicken — $15\n2️⃣ Pasta Alfredo — $13\n3️⃣ Veggie Burger — $12\n4️⃣ Margherita Pizza — $11",
+      "image": "/images/maincourse.jpg",
+      "options": [
+        { "label": "Grilled Chicken", "next": "addedToCart" },
+        { "label": "Pasta Alfredo", "next": "addedToCart" },
+        { "label": "Veggie Burger", "next": "addedToCart" },
+        { "label": "Margherita Pizza", "next": "addedToCart" },
+        { "label": "Back to Menu", "next": "takeout" }
+      ]
+    },
+
+    {
+      "id": "addedToCart",
+      "message": "✅ Item added to your cart!\nWould you like to add more or proceed to checkout?",
+      "options": [
+        { "label": "Add More Items", "next": "takeout" },
+        { "label": "Go to Checkout", "next": "viewCart" }
+      ]
+    },
+
+    {
+      "id": "viewCart",
+      "message": "🛒 Your Cart Summary:\n- Garlic Bread — $5\n- Pasta Alfredo — $13\n\nTotal: $18\n\nWould you like to proceed to payment?",
+      "options": [
+        { "label": "Proceed to Payment 💳", "next": "choosePayment" },
+        { "label": "Add More Items", "next": "takeout" },
+        { "label": "Cancel Order", "next": "cancelOrder" }
+      ]
+    },
+
+    {
+      "id": "choosePayment",
+      "message": "How would you like to pay?",
+      "options": [
+        { "label": "Pay Online 💳", "next": "payOnline" },
+        { "label": "Pay on Pickup 💵", "next": "confirmCash" },
+        { "label": "Back to Cart", "next": "viewCart" }
+      ]
+    },
+
+    {
+      "id": "payOnline",
+      "message": "Redirecting to secure payment gateway... 💳\nPlease complete your payment using the link below:\n👉 [Pay Now](https://your-payment-link.com)",
+      "next": "paymentSuccess"
+    },
+
+    {
+      "id": "confirmCash",
+      "message": "✅ Perfect! Your order will be ready for pickup soon. You can pay when you arrive.",
+      "next": "orderComplete"
+    },
+
+    {
+      "id": "paymentSuccess",
+      "message": "🎉 Payment received! Thank you, {userName}.\nYour order is being prepared and will be ready shortly.",
+      "next": "orderComplete"
+    },
+
+    {
+      "id": "orderComplete",
+      "message": "🍽️ Order Confirmed!\nOrder ID: #A1024\nPickup: {shopName}, Main Street\nETA: 25 mins\n\nWould you like to receive order updates?",
+      "options": [
+        { "label": "Yes, send updates 📱", "next": "updatesConfirmed" },
+        { "label": "No, thanks", "next": "start" }
+      ]
+    },
+
+    {
+      "id": "updatesConfirmed",
+      "message": "✅ We’ll notify you via WhatsApp or SMS when your order is ready.\nThank you for ordering from {shopName}! ❤️",
+      "options": [{ "label": "Back to Home", "next": "start" }]
+    },
+
+    {
+      "id": "cancelOrder",
+      "message": "Order canceled. No charges applied. Would you like to start over?",
+      "options": [
+        { "label": "Yes, start over", "next": "start" },
+        { "label": "No, exit", "next": "exit" }
+      ]
+    },
+
+    {
+      "id": "exit",
+      "message": "👋 Thanks for visiting {shopName}! Have a great day!"
+    }
+  ],
+
+  "restaurant1": [
+    {
+      "id": "start",
+      "message": "🍽️ Welcome to FoodieHub! How can we serve you today?",
+      "options": [
+        { "label": "Make Reservation", "next": "reservation" },
+        { "label": "Delivery", "next": "menu" },
         { "label": "Contact Us", "next": "contact" }
       ]
     },
     {
       "id": "reservation",
-      "message": "Let's reserve your table at {shopName}! What's your name?",
-      "input": true,
-      "next": "partySize"
-    },
-    {
-      "id": "partySize",
-      "message": "Great {userName}! How many people will be dining?",
+      "message": "Great! Please select a date for your reservation.",
       "options": [
-        { "label": "2 people", "next": "chooseDate" },
-        { "label": "4 people", "next": "chooseDate" },
-        { "label": "6+ people", "next": "chooseDate" }
+        { "label": "Today", "next": "reserveTime" },
+        { "label": "Tomorrow", "next": "reserveTime" }
       ]
     },
     {
-      "id": "chooseDate",
-      "message": "Perfect, {userName}! When would you like to dine?",
+      "id": "reserveTime",
+      "message": "Select a time slot:",
       "options": [
-        { "label": "Today", "next": "chooseTime" },
-        { "label": "Tomorrow", "next": "chooseTime" },
-        { "label": "This Weekend", "next": "chooseTime" }
+        { "label": "7:00 PM", "next": "reserveName" },
+        { "label": "8:00 PM", "next": "reserveName" },
+        { "label": "9:00 PM", "next": "reserveName" }
       ]
     },
     {
-      "id": "chooseTime",
-      "message": "Excellent! What time works best for you?",
-      "options": [
-        { "label": "6:00 PM", "next": "confirmReservation" },
-        { "label": "7:30 PM", "next": "confirmReservation" },
-        { "label": "8:00 PM", "next": "confirmReservation" }
-      ]
+      "id": "reserveName",
+      "message": "Please enter your name to confirm the reservation:",
+      "input": "text",
+      "next": "reserveConfirm"
     },
     {
-      "id": "confirmReservation",
-      "message": "✅ Your table is reserved at {shopName}, {userName}! We'll send you a confirmation shortly."
+      "id": "reserveConfirm",
+      "message": "✅ Your reservation has been confirmed! Would you like to see our menu?",
+      "options": [
+        { "label": "Yes, show menu", "next": "menu" },
+        { "label": "No, thank you", "next": "end" }
+      ]
     },
     {
       "id": "menu",
-      "message": "Here's our delicious menu at {shopName}:",
-      "options": [
-        { "label": "Starters", "next": "menuStarters" },
-        { "label": "Main Course", "next": "menuMain" },
-        { "label": "Desserts", "next": "menuDesserts" },
-        { "label": "Beverages", "next": "menuDrinks" },
-        { "label": "Back to Main Menu", "next": "start" }
+      "message": "Here’s our delicious menu 🍕🥤",
+      "menu": [
+        { "name": "Margherita Pizza", "price": 8.5 },
+        { "name": "Pepperoni Pizza", "price": 9.5 },
+        { "name": "BBQ Chicken Pizza", "price": 10 },
+        { "name": "Veggie Delight Pizza", "price": 8 },
+        { "name": "Hawaiian Pizza", "price": 9 },
+        { "name": "Four Cheese Pizza", "price": 10.5 },
+        { "name": "Coke", "price": 1.5 },
+        { "name": "Sprite", "price": 1.5 }
       ]
-    },
-    {
-      "id": "menuStarters",
-      "message": "🥗 Starters:\n- Garlic Bread: $5\n- Caesar Salad: $7\n- Soup of the Day: $6",
-      "options": [
-        { "label": "Back to Menu", "next": "menu" },
-        { "label": "Make Reservation", "next": "reservation" }
-      ]
-    },
-    {
-      "id": "menuMain",
-      "message": "🍝 Main Course:\n- Grilled Chicken: $15\n- Pasta Alfredo: $13\n- Veggie Burger: $12",
-      "options": [
-        { "label": "Back to Menu", "next": "menu" },
-        { "label": "Make Reservation", "next": "reservation" }
-      ]
-    },
-    {
-      "id": "menuDesserts",
-      "message": "🍰 Desserts:\n- Chocolate Cake: $6\n- Ice Cream Sundae: $5\n- Fruit Salad: $4",
-      "options": [
-        { "label": "Back to Menu", "next": "menu" },
-        { "label": "Make Reservation", "next": "reservation" }
-      ]
-    },
-    {
-      "id": "menuDrinks",
-      "message": "🥤 Beverages:\n- Soft Drinks: $3\n- Coffee/Tea: $3\n- Smoothies: $5",
-      "options": [
-        { "label": "Back to Menu", "next": "menu" },
-        { "label": "Make Reservation", "next": "reservation" }
-      ]
-    },
-    {
-      "id": "takeout",
-      "message": "Order takeout from {shopName}! What would you like to do?",
-      "options": [
-        { "label": "View Menu for Takeout", "next": "menu" },
-        { "label": "Place Order Now", "next": "takeoutOrder" },
-        { "label": "Back to Main Menu", "next": "start" }
-      ]
-    },
-    {
-      "id": "takeoutOrder",
-      "message": "Please enter your order details below:",
-      "input": true,
-      "next": "takeoutConfirm"
-    },
-    {
-      "id": "takeoutConfirm",
-      "message": "✅ Thank you, {userName}! Your takeout order at {shopName} has been placed. We'll notify you when it's ready."
-    },
-    {
-      "id": "offers",
-      "message": "🎉 Current offers at {shopName}:",
-      "options": [
-        { "label": "Combo Deals", "next": "offersInfo" },
-        { "label": "Happy Hour", "next": "offersInfo" },
-        { "label": "Back to Main Menu", "next": "start" }
-      ]
-    },
-    {
-      "id": "offersInfo",
-      "message": "Hurry! These offers are valid for a limited time. Would you like to book a table or order takeout?",
-      "options": [
-        { "label": "Book Table", "next": "reservation" },
-        { "label": "Order Takeout", "next": "takeout" },
-        { "label": "Back to Main Menu", "next": "start" }
-      ]
-    },
-    {
-      "id": "contact",
-      "message": "You can reach {shopName} via:",
-      "options": [
-        { "label": "Call Us 📞", "next": "callRestaurant" },
-        { "label": "WhatsApp Chat 💬", "next": "whatsappRestaurant" },
-        { "label": "Back to Main Menu", "next": "start" }
-      ]
-    },
-    {
-      "id": "callRestaurant",
-      "message": "Calling {shopName} at +1234567890...",
-      "options": [{ "label": "Back to Main Menu", "next": "start" }]
-    },
-    {
-      "id": "whatsappRestaurant",
-      "message": "Starting WhatsApp chat with {shopName}. Type your message below:",
-      "input": true,
-      "next": "contactEnd"
-    },
-    {
-      "id": "contactEnd",
-      "message": "Our team will reply shortly, {userName}. Anything else?",
-      "options": [{ "label": "Back to Main Menu", "next": "start" }]
     }
   ],
 
@@ -461,6 +489,227 @@
     }
   ],
 
+  "solicitor": [
+    {
+      "id": "start",
+      "message": "⚖️ Welcome to {shopName}! We’re here to help with your legal needs. How can we assist you today?",
+      "options": [
+        { "label": "Book Consultation", "next": "consultationType" },
+        { "label": "View Legal Services", "next": "viewServices" },
+        { "label": "Get a Quote", "next": "getQuote" },
+        { "label": "Case Updates", "next": "caseUpdate" }
+      ]
+    },
+
+    {
+      "id": "viewServices",
+      "message": "Here are the areas of law we cover at {shopName}:",
+      "options": [
+        { "label": "Immigration Law", "next": "immigrationInfo" },
+        { "label": "Family Law", "next": "familyInfo" },
+        { "label": "Property / Conveyancing", "next": "propertyInfo" },
+        { "label": "Employment Law", "next": "employmentInfo" },
+        { "label": "Business & Contracts", "next": "businessInfo" },
+        { "label": "Back to Main Menu", "next": "start" }
+      ]
+    },
+
+    {
+      "id": "consultationType",
+      "message": "Please select the type of consultation you’d like to book:",
+      "options": [
+        { "label": "In-Person Consultation", "next": "getName" },
+        { "label": "Video / Phone Consultation", "next": "getName" }
+      ]
+    },
+
+    {
+      "id": "getName",
+      "message": "Great choice! May I know your full name, please?",
+      "input": true,
+      "next": "getEmail"
+    },
+
+    {
+      "id": "getEmail",
+      "message": "Thanks, {userName}! Could you please share your email address so we can confirm your appointment?",
+      "input": true,
+      "next": "chooseLegalArea"
+    },
+
+    {
+      "id": "chooseLegalArea",
+      "message": "Which area of law do you need help with, {userName}?",
+      "options": [
+        { "label": "Immigration", "next": "immigrationDetails" },
+        { "label": "Family", "next": "familyDetails" },
+        { "label": "Property", "next": "propertyDetails" },
+        { "label": "Employment", "next": "employmentDetails" },
+        { "label": "Business / Contracts", "next": "businessDetails" }
+      ]
+    },
+
+    {
+      "id": "immigrationDetails",
+      "message": "Please choose your immigration concern:",
+      "options": [
+        { "label": "Visa Application / Extension", "next": "chooseTime" },
+        { "label": "Spouse / Dependent Visa", "next": "chooseTime" },
+        { "label": "ILR / Settlement / Naturalisation", "next": "chooseTime" },
+        { "label": "Asylum / Appeal", "next": "chooseTime" }
+      ]
+    },
+
+    {
+      "id": "familyDetails",
+      "message": "Select your family law concern:",
+      "options": [
+        { "label": "Divorce / Separation", "next": "chooseTime" },
+        { "label": "Child Custody / Support", "next": "chooseTime" },
+        { "label": "Domestic Abuse / Protection Orders", "next": "chooseTime" }
+      ]
+    },
+
+    {
+      "id": "propertyDetails",
+      "message": "Select the type of property service you need:",
+      "options": [
+        { "label": "Buying Property", "next": "chooseTime" },
+        { "label": "Selling Property", "next": "chooseTime" },
+        { "label": "Transfer of Ownership", "next": "chooseTime" },
+        { "label": "Tenancy Agreement", "next": "chooseTime" }
+      ]
+    },
+
+    {
+      "id": "employmentDetails",
+      "message": "Choose your employment-related issue:",
+      "options": [
+        { "label": "Unfair Dismissal", "next": "chooseTime" },
+        { "label": "Workplace Discrimination", "next": "chooseTime" },
+        { "label": "Settlement Agreement", "next": "chooseTime" },
+        { "label": "Contract Review", "next": "chooseTime" }
+      ]
+    },
+
+    {
+      "id": "businessDetails",
+      "message": "Choose your business law requirement:",
+      "options": [
+        { "label": "Company Formation", "next": "chooseTime" },
+        { "label": "Commercial Contract", "next": "chooseTime" },
+        { "label": "Franchise Agreement", "next": "chooseTime" },
+        { "label": "Dispute Resolution", "next": "chooseTime" }
+      ]
+    },
+
+    {
+      "id": "chooseTime",
+      "message": "When would you like your consultation, {userName}?",
+      "options": [
+        { "label": "Today", "next": "paymentOption" },
+        { "label": "Tomorrow", "next": "paymentOption" },
+        { "label": "This Week", "next": "paymentOption" },
+        { "label": "Next Week", "next": "paymentOption" }
+      ]
+    },
+
+    {
+      "id": "paymentOption",
+      "message": "Consultation fees start from £50. Would you like to pay now or later?",
+      "options": [
+        { "label": "Pay Now 💳", "next": "confirmPayment" },
+        { "label": "Pay Later 💬", "next": "confirmLater" }
+      ]
+    },
+
+    {
+      "id": "confirmPayment",
+      "message": "✅ Payment link sent! Your consultation at {shopName} is confirmed, {userName}. You'll receive an email confirmation shortly."
+    },
+
+    {
+      "id": "confirmLater",
+      "message": "🕒 Your slot has been held, {userName}. Please complete payment to confirm. A reminder will be sent to your email."
+    },
+
+    {
+      "id": "getQuote",
+      "message": "Please tell us briefly about your case or the service you need so we can provide an accurate quote:",
+      "input": true,
+      "next": "quoteEmail"
+    },
+
+    {
+      "id": "quoteEmail",
+      "message": "Thank you! Please provide your email or phone number so our team can send your personalized quote.",
+      "input": true,
+      "next": "quoteConfirm"
+    },
+
+    {
+      "id": "quoteConfirm",
+      "message": "✅ Thank you, {userName}! Our legal team at {shopName} will reach out within 24 hours with your quote."
+    },
+
+    {
+      "id": "caseUpdate",
+      "message": "🔍 Please enter your case reference number to check your status:",
+      "input": true,
+      "next": "caseStatus"
+    },
+
+    {
+      "id": "caseStatus",
+      "message": "Thank you, {userName}. Our system shows your case is currently *under review*. Your solicitor will contact you if any documents are needed."
+    },
+
+    {
+      "id": "immigrationInfo",
+      "message": "We provide comprehensive immigration services including visa extensions, ILR, naturalisation, and appeals. Would you like to book a consultation?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "consultationType" },
+        { "label": "Back to Services", "next": "viewServices" }
+      ]
+    },
+
+    {
+      "id": "familyInfo",
+      "message": "We handle all areas of family law: divorce, custody, financial settlements, and protective orders. Would you like to speak with a specialist?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "consultationType" },
+        { "label": "Back to Services", "next": "viewServices" }
+      ]
+    },
+
+    {
+      "id": "propertyInfo",
+      "message": "We assist with conveyancing, tenancy agreements, and property transfers. Would you like to book a conveyancing consultation?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "consultationType" },
+        { "label": "Back to Services", "next": "viewServices" }
+      ]
+    },
+
+    {
+      "id": "employmentInfo",
+      "message": "We support both employees and employers in settlement agreements, disputes, and tribunal cases. Would you like to consult our employment team?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "consultationType" },
+        { "label": "Back to Services", "next": "viewServices" }
+      ]
+    },
+
+    {
+      "id": "businessInfo",
+      "message": "Our commercial solicitors can help with contracts, company setup, compliance, and dispute resolution. Shall we schedule a quick call?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "consultationType" },
+        { "label": "Back to Services", "next": "viewServices" }
+      ]
+    }
+  ],
+
   "makeup": [
     {
       "id": "start",
@@ -599,6 +848,1303 @@
     {
       "id": "confirmSpa",
       "message": "🧘 Your spa treatment at {shopName} is booked, {userName}! Prepare for ultimate relaxation!"
+    }
+  ],
+  "tattoo-studio": [
+    {
+      "id": "start",
+      "message": "Hey there 👋 Welcome to *Inked Expressions*! Ready to get some fresh ink or just exploring ideas today?",
+      "options": [
+        { "label": "💉 Book a Tattoo Appointment", "next": "bookService" },
+        { "label": "🎨 Explore Tattoo Designs", "next": "designGallery" },
+        { "label": "🧑‍🎨 Meet Our Artists", "next": "artistPortfolio" },
+        { "label": "💬 Ask a Question", "next": "askQuestion" }
+      ]
+    },
+    {
+      "id": "bookService",
+      "message": "Awesome! Let’s book your tattoo session. What’s your full name?",
+      "input": true,
+      "next": "contactDetails"
+    },
+    {
+      "id": "contactDetails",
+      "message": "Thanks, {userName}! Could you share your phone number or email so we can confirm your appointment?",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "What kind of tattoo are you looking for today?",
+      "options": [
+        { "label": "🐉 Small/Minimal Tattoo", "next": "chooseArtist" },
+        { "label": "🕉️ Traditional or Tribal", "next": "chooseArtist" },
+        { "label": "🌸 Floral/Realism", "next": "chooseArtist" },
+        {
+          "label": "🐾 Custom Design (I have my own idea)",
+          "next": "consultationOption"
+        },
+        { "label": "♻️ Touch-up/Redo", "next": "chooseArtist" }
+      ]
+    },
+    {
+      "id": "chooseArtist",
+      "message": "Do you have a preferred artist, or should we match you with one based on your style?",
+      "options": [
+        { "label": "🎨 Choose from List", "next": "artistPortfolio" },
+        { "label": "🤝 Match me automatically", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like to come in? Here are the next available slots for {selectedArtist}.",
+      "options": [
+        { "label": "🕓 Tomorrow 2 PM", "next": "paymentOption" },
+        { "label": "🕒 Friday 5 PM", "next": "paymentOption" },
+        { "label": "📅 This Weekend", "next": "paymentOption" }
+      ]
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done, {userName}! Would you like to pay a deposit now to secure your slot or pay at the studio?",
+      "options": [
+        { "label": "💳 Pay Deposit Now", "next": "uploadReference" },
+        { "label": "🏁 Pay at Studio", "next": "uploadReference" }
+      ]
+    },
+    {
+      "id": "uploadReference",
+      "message": "Would you like to upload a photo or inspiration for your tattoo? It helps our artists prepare better!",
+      "options": [
+        { "label": "📎 Upload Image", "next": "aftercareInfo" },
+        { "label": "🚫 Skip", "next": "aftercareInfo" }
+      ]
+    },
+    {
+      "id": "aftercareInfo",
+      "message": "Would you like to receive our *Aftercare Guide* on how to take care of your tattoo?",
+      "options": [
+        { "label": "✅ Yes, send it to me", "next": "confirmAppointment" },
+        { "label": "❌ Maybe later", "next": "confirmAppointment" }
+      ]
+    },
+    {
+      "id": "consultationOption",
+      "message": "Would you like to book a *Free Tattoo Consultation* first to discuss your design idea in detail?",
+      "options": [
+        { "label": "🗓️ Yes, book consultation", "next": "chooseTime" },
+        { "label": "🚫 No, go straight to booking", "next": "chooseArtist" }
+      ]
+    },
+    {
+      "id": "designGallery",
+      "message": "Here are some popular tattoo styles — which one inspires you the most?",
+      "options": [
+        { "label": "🔥 Black & Grey", "next": "bookService" },
+        { "label": "🎭 Realism", "next": "bookService" },
+        { "label": "💫 Minimalist", "next": "bookService" },
+        { "label": "🧿 Geometric", "next": "bookService" }
+      ]
+    },
+    {
+      "id": "artistPortfolio",
+      "message": "Meet our talented artists! 🎨 Each has their own style and vibe.",
+      "options": [
+        { "label": "🧑‍🎨 Alex — Realism & Portraits", "next": "chooseTime" },
+        { "label": "👩‍🎨 Mia — Minimalist & Fine Line", "next": "chooseTime" },
+        {
+          "label": "🧔‍🎨 Leo — Tribal & Custom Designs",
+          "next": "chooseTime"
+        }
+      ]
+    },
+    {
+      "id": "askQuestion",
+      "message": "Sure! What would you like to know? (You can ask about prices, healing time, or custom designs.)"
+    },
+    {
+      "id": "confirmAppointment",
+      "message": "All set, {userName}! 🎉 Your appointment with {selectedArtist} is confirmed for {selectedTime}. We’ll send you a reminder before your session. Can’t wait to see your new ink!",
+      "options": [
+        { "label": "📲 Follow us on Instagram", "next": "followUp" },
+        { "label": "🏁 Done", "next": null }
+      ]
+    },
+    {
+      "id": "followUp",
+      "message": "Here’s our Insta 👉 @InkedExpressions. Check out our latest work and tag us after your session!"
+    }
+  ],
+  "laser-hair-removal": [
+    {
+      "id": "start",
+      "message": "✨ Welcome to {shopName}! Say goodbye to unwanted hair with safe, long-lasting laser treatments. What would you like to do today?",
+      "options": [
+        { "label": "📅 Book Appointment", "next": "bookService" },
+        { "label": "💆 View Treatment Areas", "next": "treatmentAreas" },
+        { "label": "💬 Ask a Question", "next": "askQuestion" },
+        { "label": "💳 Pricing & Packages", "next": "pricing" }
+      ]
+    },
+    {
+      "id": "bookService",
+      "message": "Perfect! Let’s schedule your laser hair removal appointment. May I have your full name, please?",
+      "input": true,
+      "next": "getContact"
+    },
+    {
+      "id": "getContact",
+      "message": "Thanks, {userName}! Could you share your contact number or email address so we can confirm your booking?",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "Awesome! Which area would you like to treat?",
+      "options": [
+        { "label": "👩‍🦰 Full Face", "next": "chooseGender" },
+        { "label": "🦵 Full Legs", "next": "chooseGender" },
+        { "label": "🦶 Half Legs", "next": "chooseGender" },
+        { "label": "🦵 Bikini / Brazilian", "next": "chooseGender" },
+        { "label": "👕 Chest / Back", "next": "chooseGender" },
+        { "label": "🦵 Underarms", "next": "chooseGender" },
+        { "label": "✨ Multiple Areas (Package)", "next": "consultationOption" }
+      ]
+    },
+    {
+      "id": "chooseGender",
+      "message": "Is this appointment for a male or female treatment area? (This helps us assign the right specialist)",
+      "options": [
+        { "label": "👩 Female", "next": "chooseSpecialist" },
+        { "label": "👨 Male", "next": "chooseSpecialist" }
+      ]
+    },
+    {
+      "id": "chooseSpecialist",
+      "message": "Who would you like to book with?",
+      "options": [
+        {
+          "label": "💁‍♀️ Dr. Emily — Expert in Sensitive Skin",
+          "next": "chooseTime"
+        },
+        {
+          "label": "💁‍♂️ Dr. Noah — Advanced Laser Specialist",
+          "next": "chooseTime"
+        },
+        { "label": "✨ Anyone Available", "next": "chooseTime" }
+      ]
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like your session, {userName}?",
+      "options": [
+        { "label": "🌞 Morning (9–12)", "next": "medicalCheck" },
+        { "label": "🌤 Afternoon (1–4)", "next": "medicalCheck" },
+        { "label": "🌙 Evening (5–8)", "next": "medicalCheck" }
+      ]
+    },
+    {
+      "id": "medicalCheck",
+      "message": "Before confirming, do you have any skin conditions or are you currently on medication for acne or sensitivity?",
+      "options": [
+        { "label": "✅ No, all good", "next": "paymentOption" },
+        {
+          "label": "⚕️ Yes, I’d like to discuss first",
+          "next": "consultationOption"
+        }
+      ]
+    },
+    {
+      "id": "consultationOption",
+      "message": "No problem! We recommend a *Free Laser Consultation* before your first session. Would you like to schedule that?",
+      "options": [
+        { "label": "🗓️ Yes, book my consultation", "next": "chooseTime" },
+        { "label": "🚫 Skip and continue booking", "next": "paymentOption" }
+      ]
+    },
+    {
+      "id": "paymentOption",
+      "message": "Would you like to pay now to secure your slot or at the clinic?",
+      "options": [
+        { "label": "💳 Pay Now (secure online)", "next": "confirmPayment" },
+        { "label": "💵 Pay at Clinic", "next": "confirmAppointment" }
+      ]
+    },
+    {
+      "id": "confirmPayment",
+      "message": "Great! Please enter your email so we can send your secure payment link.",
+      "input": true,
+      "next": "confirmAppointment"
+    },
+    {
+      "id": "confirmAppointment",
+      "message": "✨ All set, {userName}! Your laser hair removal session at {shopName} is confirmed. We'll send you a reminder before your appointment and share pre-session care tips too!"
+    },
+    {
+      "id": "treatmentAreas",
+      "message": "Here are some popular treatment areas at {shopName}:",
+      "options": [
+        {
+          "label": "👩‍🦰 Face (Chin, Upper Lip, Full Face)",
+          "next": "bookService"
+        },
+        { "label": "🦵 Legs (Half or Full)", "next": "bookService" },
+        { "label": "🦵 Bikini / Brazilian", "next": "bookService" },
+        { "label": "🦵 Underarms", "next": "bookService" },
+        { "label": "👕 Chest / Back", "next": "bookService" },
+        { "label": "📋 View Packages", "next": "pricing" }
+      ]
+    },
+    {
+      "id": "pricing",
+      "message": "Here’s our pricing guide 💰 (exact rates may vary based on hair type and sessions):",
+      "options": [
+        { "label": "Full Face – $80/session", "next": "bookService" },
+        { "label": "Full Legs – $150/session", "next": "bookService" },
+        { "label": "Underarms – $60/session", "next": "bookService" },
+        { "label": "Bikini / Brazilian – $120/session", "next": "bookService" },
+        { "label": "Full Body Package – $350/session", "next": "bookService" }
+      ]
+    },
+    {
+      "id": "askQuestion",
+      "message": "Sure! What would you like to ask? (e.g., side effects, pain level, how many sessions you’ll need, etc.)",
+      "input": true,
+      "next": "answerQuery"
+    },
+    {
+      "id": "answerQuery",
+      "message": "Thanks for asking, {userName}! Our team will get back to you shortly with a detailed answer. Would you like us to call or message you?",
+      "options": [
+        { "label": "📞 Call me", "next": "confirmAppointment" },
+        { "label": "💬 Message me", "next": "confirmAppointment" }
+      ]
+    }
+  ],
+  "catering-service": [
+    {
+      "id": "start",
+      "message": "🍽️ Welcome to {shopName}! We make every event delicious and unforgettable. What would you like to do today?",
+      "options": [
+        { "label": "📅 Book Catering Service", "next": "bookService" },
+        { "label": "🍛 View Menu Options", "next": "menuOptions" },
+        { "label": "🎉 Get a Quote for Event", "next": "getQuote" },
+        { "label": "💬 Ask a Question", "next": "askQuestion" }
+      ]
+    },
+    {
+      "id": "bookService",
+      "message": "Awesome! Let's book your catering service. What's your full name?",
+      "input": true,
+      "next": "getContact"
+    },
+    {
+      "id": "getContact",
+      "message": "Thanks, {userName}! Could you please share your phone number or email so we can confirm your booking?",
+      "input": true,
+      "next": "eventType"
+    },
+    {
+      "id": "eventType",
+      "message": "What type of event are you catering for?",
+      "options": [
+        { "label": "🎂 Birthday Party", "next": "guestCount" },
+        { "label": "💍 Wedding", "next": "guestCount" },
+        { "label": "🏢 Corporate Event", "next": "guestCount" },
+        { "label": "🎓 Graduation", "next": "guestCount" },
+        { "label": "🍽️ Private Dinner", "next": "guestCount" }
+      ]
+    },
+    {
+      "id": "guestCount",
+      "message": "Great! Approximately how many guests will be attending?",
+      "input": true,
+      "next": "chooseMenuType"
+    },
+    {
+      "id": "chooseMenuType",
+      "message": "What kind of menu are you looking for?",
+      "options": [
+        { "label": "🥗 Vegetarian", "next": "menuSelection" },
+        { "label": "🍖 Non-Vegetarian", "next": "menuSelection" },
+        { "label": "🍱 Mixed (Veg + Non-Veg)", "next": "menuSelection" },
+        { "label": "🌍 International Cuisine", "next": "menuSelection" }
+      ]
+    },
+    {
+      "id": "menuSelection",
+      "message": "Here are some popular menu packages you can choose from:",
+      "options": [
+        { "label": "🍛 Classic Buffet (3-course)", "next": "chooseDate" },
+        { "label": "🥘 Premium Feast (5-course)", "next": "chooseDate" },
+        { "label": "🍢 Finger Food & Snacks", "next": "chooseDate" },
+        { "label": "🥂 Custom Menu (Let’s discuss)", "next": "customMenu" }
+      ]
+    },
+    {
+      "id": "customMenu",
+      "message": "Sounds great! Tell us a bit about your preferred dishes or theme (e.g., Italian night, BBQ, Indian traditional).",
+      "input": true,
+      "next": "chooseDate"
+    },
+    {
+      "id": "chooseDate",
+      "message": "When is your event scheduled, {userName}?",
+      "input": true,
+      "next": "venueOption"
+    },
+    {
+      "id": "venueOption",
+      "message": "Where will the event take place?",
+      "options": [
+        { "label": "🏠 At My Home / Private Venue", "next": "paymentOption" },
+        { "label": "🏢 Corporate Venue", "next": "paymentOption" },
+        { "label": "🍽️ Need Venue Recommendation", "next": "venueAssist" }
+      ]
+    },
+    {
+      "id": "venueAssist",
+      "message": "Got it! Please share your city or area so we can suggest suitable venues near you.",
+      "input": true,
+      "next": "paymentOption"
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done! Would you like to pay a booking deposit now or later?",
+      "options": [
+        { "label": "💳 Pay Deposit Now", "next": "confirmPayment" },
+        { "label": "💵 Pay on Confirmation", "next": "confirmBooking" }
+      ]
+    },
+    {
+      "id": "confirmPayment",
+      "message": "Please enter your email so we can send your secure payment link.",
+      "input": true,
+      "next": "confirmBooking"
+    },
+    {
+      "id": "confirmBooking",
+      "message": "🎉 Amazing, {userName}! Your catering booking with {shopName} is confirmed. We'll reach out shortly to finalize menu details and event setup."
+    },
+    {
+      "id": "menuOptions",
+      "message": "Here’s what we serve at {shopName}:",
+      "options": [
+        { "label": "🍛 Indian Cuisine", "next": "bookService" },
+        { "label": "🍝 Italian Dishes", "next": "bookService" },
+        { "label": "🥗 Mediterranean Menu", "next": "bookService" },
+        { "label": "🍢 BBQ & Grilled Items", "next": "bookService" },
+        { "label": "🍰 Desserts & Drinks", "next": "bookService" }
+      ]
+    },
+    {
+      "id": "getQuote",
+      "message": "Sure! Let's prepare a quote for your event. What type of event are you planning?",
+      "input": true,
+      "next": "guestCountQuote"
+    },
+    {
+      "id": "guestCountQuote",
+      "message": "How many guests are you expecting?",
+      "input": true,
+      "next": "quoteBudget"
+    },
+    {
+      "id": "quoteBudget",
+      "message": "What's your approximate budget per guest (or total)?",
+      "input": true,
+      "next": "quoteFollowup"
+    },
+    {
+      "id": "quoteFollowup",
+      "message": "Thank you! Our team will prepare a customized quote and contact you soon. Would you like us to reach out by call or message?",
+      "options": [
+        { "label": "📞 Call me", "next": "confirmBooking" },
+        { "label": "💬 Message me", "next": "confirmBooking" }
+      ]
+    },
+    {
+      "id": "askQuestion",
+      "message": "Of course! What would you like to ask? (e.g., menu customization, delivery time, staff availability, etc.)",
+      "input": true,
+      "next": "answerQuery"
+    },
+    {
+      "id": "answerQuery",
+      "message": "Thanks for your question, {userName}! Our catering manager will get back to you shortly with the details.",
+      "options": [
+        { "label": "📞 Call me back", "next": "confirmBooking" },
+        { "label": "💬 Message me instead", "next": "confirmBooking" }
+      ]
+    }
+  ],
+  "chiropractic-clinic": [
+    {
+      "id": "start",
+      "message": "👋 Welcome to AlignWell Chiropractic Clinic! I’m your virtual assistant here to help you book an appointment or learn more about our services.",
+      "options": [
+        { "label": "Book an Appointment", "next": "bookAppointment" },
+        { "label": "View Services", "next": "viewServices" },
+        { "label": "Contact Clinic", "next": "contactClinic" }
+      ]
+    },
+    {
+      "id": "bookAppointment",
+      "message": "Great! Let’s get you started with your chiropractic appointment. What’s your full name?",
+      "input": true,
+      "next": "getContact"
+    },
+    {
+      "id": "getContact",
+      "message": "Thanks, {userName}! Can I get your phone number so we can confirm your booking?",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "Perfect. What type of chiropractic service are you looking for today?",
+      "options": [
+        { "label": "Spinal Adjustment", "next": "chooseTime" },
+        { "label": "Neck Pain Relief", "next": "chooseTime" },
+        { "label": "Back Pain Therapy", "next": "chooseTime" },
+        { "label": "Posture Correction", "next": "chooseTime" },
+        { "label": "Sports Injury Treatment", "next": "chooseTime" },
+        { "label": "Other / Not Sure", "next": "customService" }
+      ]
+    },
+    {
+      "id": "customService",
+      "message": "No worries! Please describe the type of service or pain area you need help with.",
+      "input": true,
+      "next": "chooseTime"
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like to visit our clinic?",
+      "options": [
+        { "label": "Today", "next": "timeSlot" },
+        { "label": "Tomorrow", "next": "timeSlot" },
+        { "label": "Select Another Date", "next": "customDate" }
+      ]
+    },
+    {
+      "id": "customDate",
+      "message": "Please type your preferred date (e.g., 10 Nov or Friday afternoon):",
+      "input": true,
+      "next": "timeSlot"
+    },
+    {
+      "id": "timeSlot",
+      "message": "Here are available time slots:",
+      "options": [
+        { "label": "10:00 AM", "next": "paymentOption" },
+        { "label": "12:30 PM", "next": "paymentOption" },
+        { "label": "3:00 PM", "next": "paymentOption" },
+        { "label": "5:30 PM", "next": "paymentOption" }
+      ]
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done, {userName}! Would you like to pay now or at the clinic?",
+      "options": [
+        { "label": "Pay Now", "next": "paymentNow" },
+        { "label": "Pay at Clinic", "next": "confirmAppointment" }
+      ]
+    },
+    {
+      "id": "paymentNow",
+      "message": "Please enter your email so we can send a secure payment link:",
+      "input": true,
+      "next": "confirmAppointment"
+    },
+    {
+      "id": "confirmAppointment",
+      "message": "✅ Your appointment is confirmed! We’ll see you soon at AlignWell Chiropractic Clinic.\n\n📍 Location: 45 Greenway Street, London\n📅 Date & Time: {chosenDate} at {chosenTime}\n☎️ Need help? Call us at +44 20 1234 5678.",
+      "options": [
+        { "label": "Add to Calendar", "next": "end" },
+        { "label": "Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "viewServices",
+      "message": "Here’s a list of our chiropractic treatments:\n\n• Spinal Adjustments\n• Neck & Shoulder Pain Relief\n• Back Pain Therapy\n• Posture Correction\n• Sports Injury Recovery\n• Wellness & Maintenance Sessions\n\nWould you like to book a session?",
+      "options": [
+        { "label": "Yes, book now", "next": "bookAppointment" },
+        { "label": "No, just exploring", "next": "end" }
+      ]
+    },
+    {
+      "id": "contactClinic",
+      "message": "📞 You can reach our front desk at +44 20 1234 5678 or email us at hello@alignwellclinic.co.uk.\nWould you like me to book a callback for you?",
+      "options": [
+        { "label": "Yes, please call me", "next": "getContact" },
+        { "label": "No, thank you", "next": "end" }
+      ]
+    },
+    {
+      "id": "end",
+      "message": "Thanks for chatting with AlignWell Chiropractic Clinic 💆‍♂️. Wishing you a pain-free day ahead!",
+      "options": [{ "label": "Start Over", "next": "start" }]
+    }
+  ],
+  "car-wash": [
+    {
+      "id": "start",
+      "message": "🚗 Welcome to SparkShine Car Wash! I’m your virtual assistant here to help you book a wash or explore our services.",
+      "options": [
+        { "label": "Book a Wash", "next": "bookWash" },
+        { "label": "View Packages", "next": "viewPackages" },
+        { "label": "Membership Plans", "next": "membershipPlans" },
+        { "label": "Contact Us", "next": "contactUs" }
+      ]
+    },
+    {
+      "id": "bookWash",
+      "message": "Awesome! Let’s book your car wash appointment. What’s your name?",
+      "input": true,
+      "next": "getContact"
+    },
+    {
+      "id": "getContact",
+      "message": "Thanks, {userName}! Can I have your phone number to confirm your booking?",
+      "input": true,
+      "next": "getVehicleType"
+    },
+    {
+      "id": "getVehicleType",
+      "message": "Great! What type of vehicle do you have?",
+      "options": [
+        { "label": "Small Car", "next": "chooseService" },
+        { "label": "SUV", "next": "chooseService" },
+        { "label": "Van", "next": "chooseService" },
+        { "label": "Truck", "next": "chooseService" },
+        { "label": "Other", "next": "customVehicle" }
+      ]
+    },
+    {
+      "id": "customVehicle",
+      "message": "Please specify your vehicle type:",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "Perfect! What kind of wash are you looking for today?",
+      "options": [
+        { "label": "Exterior Wash", "next": "chooseTime" },
+        { "label": "Full Wash (Exterior + Interior)", "next": "chooseTime" },
+        { "label": "Premium Detailing", "next": "chooseTime" },
+        { "label": "Wax & Polish", "next": "chooseTime" },
+        { "label": "Custom Request", "next": "customService" }
+      ]
+    },
+    {
+      "id": "customService",
+      "message": "Please describe what service you’d like:",
+      "input": true,
+      "next": "chooseTime"
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like your car wash?",
+      "options": [
+        { "label": "Today", "next": "timeSlot" },
+        { "label": "Tomorrow", "next": "timeSlot" },
+        { "label": "Select Another Date", "next": "customDate" }
+      ]
+    },
+    {
+      "id": "customDate",
+      "message": "Please type your preferred date (e.g., 5 Nov or Saturday morning):",
+      "input": true,
+      "next": "timeSlot"
+    },
+    {
+      "id": "timeSlot",
+      "message": "Here are available time slots:",
+      "options": [
+        { "label": "9:00 AM", "next": "pickupOption" },
+        { "label": "11:30 AM", "next": "pickupOption" },
+        { "label": "2:00 PM", "next": "pickupOption" },
+        { "label": "5:00 PM", "next": "pickupOption" }
+      ]
+    },
+    {
+      "id": "pickupOption",
+      "message": "Would you like to drop off your car or request a pickup service?",
+      "options": [
+        { "label": "Drop Off at Station", "next": "paymentOption" },
+        { "label": "Request Pickup", "next": "pickupAddress" }
+      ]
+    },
+    {
+      "id": "pickupAddress",
+      "message": "Please share your pickup address:",
+      "input": true,
+      "next": "paymentOption"
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done, {userName}! Would you like to pay now or at the location?",
+      "options": [
+        { "label": "Pay Now 💳", "next": "paymentNow" },
+        { "label": "Pay at Location 💵", "next": "confirmBooking" }
+      ]
+    },
+    {
+      "id": "paymentNow",
+      "message": "Please enter your email so we can send you a secure payment link:",
+      "input": true,
+      "next": "confirmBooking"
+    },
+    {
+      "id": "confirmBooking",
+      "message": "✅ Your car wash appointment is confirmed, {userName}! We’ll see you soon at SparkShine Car Wash.\n\n📍 Location: 25 High Street, London\n📅 Date & Time: {chosenDate} at {chosenTime}\n🚗 Service: {chosenService}\n☎️ For help, call +44 20 9988 7766.",
+      "options": [
+        { "label": "Add to Calendar", "next": "end" },
+        { "label": "Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "viewPackages",
+      "message": "Here are our most popular wash packages:\n\n• Basic Exterior Wash – £10\n• Full Wash (Interior + Exterior) – £20\n• Premium Detailing – £35\n• Wax & Polish – £50\n\nWould you like to book one?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "bookWash" },
+        { "label": "No, just browsing", "next": "end" }
+      ]
+    },
+    {
+      "id": "membershipPlans",
+      "message": "🌟 Become a SparkShine Member:\n\n• Silver – 4 washes/month for £30\n• Gold – Unlimited washes for £60/month\n• Corporate – Fleet service on request\n\nWould you like me to connect you to our membership team?",
+      "options": [
+        { "label": "Yes, please", "next": "getContact" },
+        { "label": "No, thanks", "next": "end" }
+      ]
+    },
+    {
+      "id": "contactUs",
+      "message": "📞 You can reach us at +44 20 9988 7766 or email support@sparkshine.co.uk.\nWould you like to request a callback?",
+      "options": [
+        { "label": "Yes, call me back", "next": "getContact" },
+        { "label": "No, that’s fine", "next": "end" }
+      ]
+    },
+    {
+      "id": "end",
+      "message": "Thanks for chatting with SparkShine Car Wash 💦. We’ll make your car shine like new! 🚘",
+      "options": [{ "label": "Start Over", "next": "start" }]
+    }
+  ],
+  "pet-grooming": [
+    {
+      "id": "start",
+      "message": "🐾 Welcome to FluffyTails Pet Grooming! I’m your assistant here to help you book a grooming session or explore our services. How can I help today?",
+      "options": [
+        { "label": "Book Grooming", "next": "bookGrooming" },
+        { "label": "View Services", "next": "viewServices" },
+        { "label": "Special Packages", "next": "viewPackages" },
+        { "label": "Contact Us", "next": "contactUs" }
+      ]
+    },
+    {
+      "id": "bookGrooming",
+      "message": "Great! Let’s book your pet’s grooming appointment. What’s your name?",
+      "input": true,
+      "next": "getContact"
+    },
+    {
+      "id": "getContact",
+      "message": "Thanks, {userName}! Could you please share your phone number so we can confirm your booking?",
+      "input": true,
+      "next": "getPetName"
+    },
+    {
+      "id": "getPetName",
+      "message": "Lovely! What’s your pet’s name?",
+      "input": true,
+      "next": "getPetType"
+    },
+    {
+      "id": "getPetType",
+      "message": "What type of pet do you have?",
+      "options": [
+        { "label": "Dog 🐕", "next": "chooseBreed" },
+        { "label": "Cat 🐈", "next": "chooseBreed" },
+        { "label": "Other", "next": "customPet" }
+      ]
+    },
+    {
+      "id": "customPet",
+      "message": "Please tell me what kind of pet you have:",
+      "input": true,
+      "next": "chooseBreed"
+    },
+    {
+      "id": "chooseBreed",
+      "message": "Got it! Please enter your pet’s breed (or type 'unknown' if unsure):",
+      "input": true,
+      "next": "chooseService"
+    },
+    {
+      "id": "chooseService",
+      "message": "Perfect! What type of grooming service would you like for {petName}?",
+      "options": [
+        { "label": "Full Grooming Package", "next": "chooseTime" },
+        { "label": "Bath & Blow Dry", "next": "chooseTime" },
+        { "label": "Nail Trimming", "next": "chooseTime" },
+        { "label": "Ear Cleaning", "next": "chooseTime" },
+        { "label": "Custom Request", "next": "customService" }
+      ]
+    },
+    {
+      "id": "customService",
+      "message": "Please describe the service you want for your pet:",
+      "input": true,
+      "next": "chooseTime"
+    },
+    {
+      "id": "chooseTime",
+      "message": "When would you like to bring {petName} in for grooming?",
+      "options": [
+        { "label": "Today", "next": "timeSlot" },
+        { "label": "Tomorrow", "next": "timeSlot" },
+        { "label": "Select Another Date", "next": "customDate" }
+      ]
+    },
+    {
+      "id": "customDate",
+      "message": "Please type your preferred date (e.g., 6 Nov or Sunday morning):",
+      "input": true,
+      "next": "timeSlot"
+    },
+    {
+      "id": "timeSlot",
+      "message": "Here are available time slots:",
+      "options": [
+        { "label": "9:00 AM", "next": "pickupOption" },
+        { "label": "11:30 AM", "next": "pickupOption" },
+        { "label": "2:00 PM", "next": "pickupOption" },
+        { "label": "5:00 PM", "next": "pickupOption" }
+      ]
+    },
+    {
+      "id": "pickupOption",
+      "message": "Would you like to drop off {petName} or request home pickup service?",
+      "options": [
+        { "label": "Drop Off", "next": "paymentOption" },
+        { "label": "Home Pickup", "next": "pickupAddress" }
+      ]
+    },
+    {
+      "id": "pickupAddress",
+      "message": "Please share your pickup address:",
+      "input": true,
+      "next": "paymentOption"
+    },
+    {
+      "id": "paymentOption",
+      "message": "Almost done, {userName}! Would you like to pay now or at the clinic?",
+      "options": [
+        { "label": "Pay Now 💳", "next": "paymentNow" },
+        { "label": "Pay at Clinic 💵", "next": "confirmBooking" }
+      ]
+    },
+    {
+      "id": "paymentNow",
+      "message": "Please enter your email so we can send a secure payment link:",
+      "input": true,
+      "next": "confirmBooking"
+    },
+    {
+      "id": "confirmBooking",
+      "message": "✅ Your grooming appointment for {petName} is confirmed, {userName}! We’ll see you soon at FluffyTails Pet Grooming.\n\n📍 Location: 10 Park Lane, London\n📅 Date & Time: {chosenDate} at {chosenTime}\n🐾 Service: {chosenService}\n☎️ Need help? Call +44 20 5678 9000.",
+      "options": [
+        { "label": "Add to Calendar", "next": "end" },
+        { "label": "Main Menu", "next": "start" }
+      ]
+    },
+    {
+      "id": "viewServices",
+      "message": "Here’s what we offer at FluffyTails:\n\n• Full Grooming (Bath, Haircut, Nail Trim, Ear Cleaning)\n• Bath & Blow Dry\n• Nail Trimming\n• De-shedding Treatment\n• Flea Treatment\n• Puppy Grooming\n\nWould you like to book a service?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "bookGrooming" },
+        { "label": "No, just exploring", "next": "end" }
+      ]
+    },
+    {
+      "id": "viewPackages",
+      "message": "🐶✨ Our Special Packages:\n\n• Starter Grooming – £25\n• Premium Pamper – £40\n• Luxury Spa – £60 (includes teeth cleaning & massage)\n\nWould you like to book one?",
+      "options": [
+        { "label": "Yes, Book Now", "next": "bookGrooming" },
+        { "label": "No, maybe later", "next": "end" }
+      ]
+    },
+    {
+      "id": "contactUs",
+      "message": "📞 You can contact us at +44 20 5678 9000 or email hello@fluffytails.co.uk.\nWould you like us to call you back?",
+      "options": [
+        { "label": "Yes, please call me", "next": "getContact" },
+        { "label": "No, that’s fine", "next": "end" }
+      ]
+    },
+    {
+      "id": "end",
+      "message": "Thanks for chatting with FluffyTails Pet Grooming 🐾. Can’t wait to make {petName} look fabulous!",
+      "options": [{ "label": "Start Over", "next": "start" }]
+    }
+  ],
+  "Photography Studio": [
+    {
+      "id": "start",
+      "message": "📸 Welcome to Lumiere Photography Studio! We capture your best moments with creativity and passion. What type of photography session are you interested in today?",
+      "options": [
+        { "label": "Portrait", "next": "portraitInfo" },
+        { "label": "Event", "next": "eventInfo" },
+        { "label": "Product", "next": "productInfo" },
+        { "label": "Wedding", "next": "weddingInfo" },
+        { "label": "Other", "next": "customRequest" }
+      ]
+    },
+
+    {
+      "id": "portraitInfo",
+      "message": "Great! Portrait sessions are perfect for personal, professional, or family photos. Would you like a studio or outdoor shoot?",
+      "options": [
+        { "label": "Studio", "next": "bookService" },
+        { "label": "Outdoor", "next": "bookService" }
+      ]
+    },
+
+    {
+      "id": "eventInfo",
+      "message": "Awesome! For events, we cover birthdays, parties, and corporate events. Please enter your event date.",
+      "input": true,
+      "next": "eventLocation"
+    },
+    {
+      "id": "eventLocation",
+      "message": "Thanks! Could you please share the event location?",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "productInfo",
+      "message": "Perfect! We offer professional product photography for e-commerce, catalogs, and ads. Please enter your business or brand name.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "weddingInfo",
+      "message": "Congratulations! 🎉 Wedding photography is one of our specialties. Please provide your wedding date.",
+      "input": true,
+      "next": "weddingVenue"
+    },
+    {
+      "id": "weddingVenue",
+      "message": "Please share the wedding venue or city.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "customRequest",
+      "message": "No problem! Please describe what kind of photoshoot you’re looking for.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "bookService",
+      "message": "Please provide your full name for the booking.",
+      "input": true,
+      "next": "contactInfo"
+    },
+
+    {
+      "id": "contactInfo",
+      "message": "Thanks! Can you share your contact number or email so we can confirm your session?",
+      "input": true,
+      "next": "chooseTime"
+    },
+
+    {
+      "id": "chooseTime",
+      "message": "When would you like to schedule your session?",
+      "options": [
+        { "label": "This Week", "next": "paymentOption" },
+        { "label": "Next Week", "next": "paymentOption" },
+        { "label": "Choose Custom Date", "next": "customDate" }
+      ]
+    },
+    {
+      "id": "customDate",
+      "message": "Please enter your preferred date and time.",
+      "input": true,
+      "next": "paymentOption"
+    },
+
+    {
+      "id": "paymentOption",
+      "message": "Would you like to pay now or later?",
+      "options": [
+        { "label": "Pay Now", "next": "confirmAppointment" },
+        { "label": "Pay Later", "next": "confirmAppointment" }
+      ]
+    },
+
+    {
+      "id": "confirmAppointment",
+      "message": "All set! 🎉 Your photography session has been booked. Our team will reach out shortly to confirm details. Thank you for choosing Lumiere Photography Studio!"
+    }
+  ],
+  "real-estate-agency": [
+    {
+      "id": "start",
+      "message": "🏡 Welcome to Skyline Real Estate! Whether you're buying, selling, or renting — we’re here to help you find the perfect property. What brings you here today?",
+      "options": [
+        { "label": "Buy a Property", "next": "buyProperty" },
+        { "label": "Rent a Property", "next": "rentProperty" },
+        { "label": "Sell a Property", "next": "sellProperty" },
+        { "label": "General Inquiry", "next": "generalInquiry" }
+      ]
+    },
+
+    {
+      "id": "buyProperty",
+      "message": "Great! What type of property are you looking to buy?",
+      "options": [
+        { "label": "Apartment / Flat", "next": "buyLocation" },
+        { "label": "House / Villa", "next": "buyLocation" },
+        { "label": "Commercial Property", "next": "buyLocation" },
+        { "label": "Land / Plot", "next": "buyLocation" }
+      ]
+    },
+    {
+      "id": "buyLocation",
+      "message": "Please enter the preferred location or city for your purchase.",
+      "input": true,
+      "next": "buyBudget"
+    },
+    {
+      "id": "buyBudget",
+      "message": "Got it! What is your approximate budget range?",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "rentProperty",
+      "message": "Sure! What type of property are you looking to rent?",
+      "options": [
+        { "label": "Apartment / Flat", "next": "rentLocation" },
+        { "label": "House", "next": "rentLocation" },
+        { "label": "Office Space", "next": "rentLocation" },
+        { "label": "Shop / Retail", "next": "rentLocation" }
+      ]
+    },
+    {
+      "id": "rentLocation",
+      "message": "Please enter the preferred area or city for renting.",
+      "input": true,
+      "next": "rentBudget"
+    },
+    {
+      "id": "rentBudget",
+      "message": "Thanks! What’s your monthly rent budget?",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "sellProperty",
+      "message": "That’s great! Please tell us what type of property you’d like to sell.",
+      "options": [
+        { "label": "Apartment / Flat", "next": "sellLocation" },
+        { "label": "House / Villa", "next": "sellLocation" },
+        { "label": "Commercial Property", "next": "sellLocation" },
+        { "label": "Land / Plot", "next": "sellLocation" }
+      ]
+    },
+    {
+      "id": "sellLocation",
+      "message": "Please share the property’s location.",
+      "input": true,
+      "next": "sellPrice"
+    },
+    {
+      "id": "sellPrice",
+      "message": "What’s your expected selling price or price range?",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "generalInquiry",
+      "message": "Sure! Please type your question or inquiry below, and our agent will get back to you.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "bookService",
+      "message": "Can we get your full name, please?",
+      "input": true,
+      "next": "contactInfo"
+    },
+    {
+      "id": "contactInfo",
+      "message": "Thanks, {userName}! Could you please provide your phone number or email so we can contact you?",
+      "input": true,
+      "next": "chooseTime"
+    },
+
+    {
+      "id": "chooseTime",
+      "message": "When would you like to schedule a consultation or property visit?",
+      "options": [
+        { "label": "Today", "next": "paymentOption" },
+        { "label": "Tomorrow", "next": "paymentOption" },
+        { "label": "This Week", "next": "paymentOption" },
+        { "label": "Choose Custom Date", "next": "customDate" }
+      ]
+    },
+    {
+      "id": "customDate",
+      "message": "Please enter your preferred date and time.",
+      "input": true,
+      "next": "paymentOption"
+    },
+
+    {
+      "id": "paymentOption",
+      "message": "Would you like to pay the consultation/booking fee now or later?",
+      "options": [
+        { "label": "Pay Now", "next": "confirmAppointment" },
+        { "label": "Pay Later", "next": "confirmAppointment" }
+      ]
+    },
+
+    {
+      "id": "confirmAppointment",
+      "message": "Thank you! 🏠 Your request has been recorded. Our real estate expert will contact you shortly with available listings and next steps. Have a great day!"
+    }
+  ],
+  "driving-school": [
+    {
+      "id": "start",
+      "message": "🚗 Welcome to SafeDrive Academy! Ready to start your driving journey? What would you like to do today?",
+      "options": [
+        { "label": "Book Driving Lessons", "next": "lessonType" },
+        { "label": "Book Test Preparation", "next": "testType" },
+        { "label": "Inquire About Prices", "next": "priceInquiry" },
+        { "label": "General Inquiry", "next": "generalInquiry" }
+      ]
+    },
+
+    {
+      "id": "lessonType",
+      "message": "Awesome! What type of driving lessons are you interested in?",
+      "options": [
+        { "label": "Beginner Lessons", "next": "transmissionType" },
+        { "label": "Refresher Lessons", "next": "transmissionType" },
+        { "label": "Intensive Course", "next": "transmissionType" },
+        { "label": "Motorway Lessons", "next": "transmissionType" }
+      ]
+    },
+
+    {
+      "id": "transmissionType",
+      "message": "Would you like to learn in a manual or automatic car?",
+      "options": [
+        { "label": "Manual", "next": "lessonLocation" },
+        { "label": "Automatic", "next": "lessonLocation" }
+      ]
+    },
+
+    {
+      "id": "lessonLocation",
+      "message": "Please enter the city or area where you’d like to take lessons.",
+      "input": true,
+      "next": "lessonTime"
+    },
+
+    {
+      "id": "lessonTime",
+      "message": "When would you like to start your lessons?",
+      "options": [
+        { "label": "This Week", "next": "bookService" },
+        { "label": "Next Week", "next": "bookService" },
+        { "label": "Choose Custom Date", "next": "customDate" }
+      ]
+    },
+
+    {
+      "id": "customDate",
+      "message": "Please enter your preferred start date.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "testType",
+      "message": "Sure! Which driving test would you like to prepare for?",
+      "options": [
+        { "label": "Theory Test", "next": "bookService" },
+        { "label": "Practical Test", "next": "bookService" },
+        { "label": "Mock Test", "next": "bookService" }
+      ]
+    },
+
+    {
+      "id": "priceInquiry",
+      "message": "No problem! What kind of lessons or courses would you like pricing information for?",
+      "options": [
+        { "label": "Beginner Lessons", "next": "bookService" },
+        { "label": "Refresher Course", "next": "bookService" },
+        { "label": "Intensive Course", "next": "bookService" },
+        { "label": "Test Preparation", "next": "bookService" }
+      ]
+    },
+
+    {
+      "id": "generalInquiry",
+      "message": "Please type your question below and our team will get back to you shortly.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "bookService",
+      "message": "Great! Could you please tell us your full name?",
+      "input": true,
+      "next": "contactInfo"
+    },
+
+    {
+      "id": "contactInfo",
+      "message": "Thanks, {userName}! Please provide your contact number or email address so we can confirm your booking.",
+      "input": true,
+      "next": "paymentOption"
+    },
+
+    {
+      "id": "paymentOption",
+      "message": "Would you like to pay now to secure your slot or pay later?",
+      "options": [
+        { "label": "Pay Now", "next": "confirmAppointment" },
+        { "label": "Pay Later", "next": "confirmAppointment" }
+      ]
+    },
+
+    {
+      "id": "confirmAppointment",
+      "message": "All set! 🎉 Your driving lesson request has been received. Our team will contact you shortly to confirm your schedule. Get ready to hit the road with confidence!"
+    }
+  ],
+  "tax-consultant": [
+    {
+      "id": "start",
+      "message": "💼 Welcome to ExpertTax Solutions! How can we assist you today?",
+      "options": [
+        { "label": "Book a Consultation", "next": "consultationType" },
+        { "label": "File My Taxes", "next": "taxType" },
+        { "label": "Ask a Tax Question", "next": "generalInquiry" },
+        { "label": "Get a Quote", "next": "quoteRequest" }
+      ]
+    },
+
+    {
+      "id": "consultationType",
+      "message": "Sure! What type of consultation do you need?",
+      "options": [
+        { "label": "Personal Tax Consultation", "next": "bookService" },
+        { "label": "Business Tax Consultation", "next": "bookService" },
+        { "label": "Corporate Tax Planning", "next": "bookService" },
+        { "label": "Audit & Compliance", "next": "bookService" }
+      ]
+    },
+
+    {
+      "id": "taxType",
+      "message": "Great! What type of tax return would you like to file?",
+      "options": [
+        { "label": "Individual Tax Return", "next": "fileYear" },
+        { "label": "Self-Employed / Freelancer", "next": "fileYear" },
+        { "label": "Limited Company Tax", "next": "fileYear" },
+        { "label": "Partnership Tax", "next": "fileYear" }
+      ]
+    },
+
+    {
+      "id": "fileYear",
+      "message": "Please enter the tax year you want to file for (e.g., 2023-2024).",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "quoteRequest",
+      "message": "Sure! Could you please tell us what service you’d like a quote for?",
+      "options": [
+        { "label": "Personal Tax Filing", "next": "getDetails" },
+        { "label": "Business Tax Filing", "next": "getDetails" },
+        { "label": "VAT / GST Returns", "next": "getDetails" },
+        { "label": "Tax Consultancy", "next": "getDetails" }
+      ]
+    },
+
+    {
+      "id": "getDetails",
+      "message": "Please provide a few details about your tax situation or requirements.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "generalInquiry",
+      "message": "Please type your question below, and one of our experts will respond shortly.",
+      "input": true,
+      "next": "bookService"
+    },
+
+    {
+      "id": "bookService",
+      "message": "Got it! Could you please tell us your full name?",
+      "input": true,
+      "next": "contactInfo"
+    },
+
+    {
+      "id": "contactInfo",
+      "message": "Thanks, {userName}! Please provide your contact number or email so we can confirm your appointment or send your quote.",
+      "input": true,
+      "next": "chooseTime"
+    },
+
+    {
+      "id": "chooseTime",
+      "message": "When would you like to schedule your appointment or call?",
+      "options": [
+        { "label": "Today", "next": "paymentOption" },
+        { "label": "Tomorrow", "next": "paymentOption" },
+        { "label": "Later This Week", "next": "paymentOption" }
+      ]
+    },
+
+    {
+      "id": "paymentOption",
+      "message": "Would you like to pay now to confirm your booking or pay later?",
+      "options": [
+        { "label": "Pay Now 💳", "next": "confirmAppointment" },
+        { "label": "Pay Later 💬", "next": "confirmAppointment" }
+      ]
+    },
+
+    {
+      "id": "confirmAppointment",
+      "message": "✅ Thank you, {userName}! Your request with ExpertTax Solutions has been received. Our team will contact you shortly to confirm your appointment or send your quote."
     }
   ]
 }

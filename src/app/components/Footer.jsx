@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 relative flex items-center justify-center">
         {/* Center Copyright */}
         <p className="text-sm text-center">
-          © {new Date().getFullYear()} eGenie. All rights reserved.
+          © {new Date().getFullYear()} eGeniePlus. All rights reserved.
         </p>
 
         {/* Right side links */}

@@ -9,7 +9,7 @@ import WebsiteChatbotArrow from "../../../public/WebsiteChatbot-arrow.png";
 export default function ChatAnimation() {
   return (
     <section className="container WebsiteChatbot m-auto w-full flex flex-col justify-center px-6 md:px-8 lg:px-16 overflow-hidden py-20 lg:py-30">
-      <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="lg:grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* LEFT SECTION */}
         <div className="space-y-6 text-center lg:text-left">
           <motion.h2
@@ -35,7 +35,7 @@ export default function ChatAnimation() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="w-48 mx-auto signin-buttons"
+            className="w-48 mx-auto lg:mx-[0] signin-buttons"
           >
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px #9A5CFF" }}
@@ -62,31 +62,15 @@ export default function ChatAnimation() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="relative flex justify-center md:justify-center WebsiteChatbot-img"
+          className="relative flex justify-center md:justify-center WebsiteChatbot-img py-10 lg:py-0 w-full lg:w-[400px] mx-auto"
         >
-          <Image
-            src={WebsiteChatbotImg}
-            alt="AI Chatbot Demo"
-            width={1000}
-            height={800}
-            className="rounded-2xl shadow-2xl border border-gray-100 will-change-transform"
-            priority
-          />
-          <Image
-            src={WebsiteChatbotChat}
-            alt="AI Chatbot Chat"
-            width={1000}
-            height={800}
-            className="chatbot-chat-img absolute will-change-transform"
-            priority
-          />
-          <Image
-            src={WebsiteChatbotArrow}
-            alt="AI Chatbot Arrow"
-            width={1000}
-            height={800}
-            className="chatbot-arrow-img absolute will-change-transform"
-            priority
+          <video
+            src="/chat-video3.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="rounded-2xl  will-change-transform"
           />
         </motion.div>
       </div>

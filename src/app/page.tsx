@@ -10,6 +10,7 @@ import PricingSection from "./components/PricingSection";
 import Header from "./components/Header";
 import ContactSection from "./components/ContactSection";
 import ChatAnimation from "./components/ChatAnimation";
+import ChatbotRestaurant from "./components/ChatbotRestaurant";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -18,9 +19,9 @@ export default function Home() {
       <Header />
       <div className="bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#1e293b]">
         <HeroSection />
-
         <ChatAnimation />
         <ChatDemoSection />
+        <ChatbotRestaurant />
         <WebsiteChatbot />
       </div>
       <AudienceSlider />

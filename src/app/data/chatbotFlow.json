@@ -1,61 +1,56 @@
 [
   {
     "id": "start",
-    "message": "👋 Welcome to Elite Cuts! How can I help you today?",
+    "message": "🍽️ Welcome to FoodieHub! How can we serve you today?",
     "options": [
-      { "label": "Book Appointment", "next": "book" },
-      { "label": "View Services & Prices", "next": "services" },
-      { "label": "Locate Us", "next": "locate" },
-      { "label": "Speak to Barber", "next": "speak" },
-      { "label": "Offers & Discounts", "next": "offers" },
-      { "label": "Working Hours", "next": "hours" }
+      { "label": "Make Reservation", "next": "reservation" },
+      { "label": "Delivery", "next": "menu" },
+      { "label": "Contact Us", "next": "contact" }
     ]
   },
   {
-    "id": "book",
-    "message": "Let's get your appointment booked! What’s your name?",
-    "input": true,
-    "next": "chooseService"
-  },
-  {
-    "id": "chooseService",
-    "message": "Which service would you like?",
+    "id": "reservation",
+    "message": "Great! Please select a date for your reservation.",
     "options": [
-      { "label": "Haircut", "next": "chooseBarber" },
-      { "label": "Shave", "next": "chooseBarber" },
-      { "label": "Beard Trim", "next": "chooseBarber" }
+      { "label": "Today", "next": "reserveTime" },
+      { "label": "Tomorrow", "next": "reserveTime" }
     ]
   },
   {
-    "id": "chooseBarber",
-    "message": "Choose your preferred barber:",
+    "id": "reserveTime",
+    "message": "Select a time slot:",
     "options": [
-      { "label": "John ✂️", "next": "chooseTime" },
-      { "label": "Mike 💈", "next": "chooseTime" }
+      { "label": "7:00 PM", "next": "reserveName" },
+      { "label": "8:00 PM", "next": "reserveName" },
+      { "label": "9:00 PM", "next": "reserveName" }
     ]
   },
   {
-    "id": "chooseTime",
-    "message": "Select your date & time:",
+    "id": "reserveName",
+    "message": "Please enter your name to confirm the reservation:",
+    "input": "text",
+    "next": "reserveConfirm"
+  },
+  {
+    "id": "reserveConfirm",
+    "message": "✅ Your reservation has been confirmed! Would you like to see our menu?",
     "options": [
-      { "label": "Today 5PM", "next": "paymentOption" },
-      { "label": "Tomorrow 3PM", "next": "paymentOption" }
+      { "label": "Yes, show menu", "next": "menu" },
+      { "label": "No, thank you", "next": "end" }
     ]
   },
   {
-    "id": "paymentOption",
-    "message": "Would you like to pay now or later?",
-    "options": [
-      { "label": "Pay Now 💳", "next": "confirmNow" },
-      { "label": "Pay Later 💬", "next": "confirmLater" }
+    "id": "menu",
+    "message": "Here’s our delicious menu 🍕🥤",
+    "menu": [
+      { "name": "Margherita Pizza", "price": 8.5 },
+      { "name": "Pepperoni Pizza", "price": 9.5 },
+      { "name": "BBQ Chicken Pizza", "price": 10 },
+      { "name": "Veggie Delight Pizza", "price": 8 },
+      { "name": "Hawaiian Pizza", "price": 9 },
+      { "name": "Four Cheese Pizza", "price": 10.5 },
+      { "name": "Coke", "price": 1.5 },
+      { "name": "Sprite", "price": 1.5 }
     ]
-  },
-  {
-    "id": "confirmNow",
-    "message": "✅ Payment link sent. Your booking is confirmed!"
-  },
-  {
-    "id": "confirmLater",
-    "message": "We’ll hold your slot. You’ll get a reminder 45 mins before your appointment."
   }
 ]

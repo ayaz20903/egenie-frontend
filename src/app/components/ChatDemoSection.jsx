@@ -8,12 +8,27 @@ import genieImage from "../../../public/genie2.png";
 
 const industryCategories = [
   { value: "barbershop", label: "Barbershop", icon: "💈" },
-  { value: "restaurant", label: "Restaurant", icon: "🍽️" },
+  // { value: "restaurant", label: "Restaurant", icon: "🍽️" },
   { value: "salon", label: "Hair Salon", icon: "💇‍♀️" },
   { value: "nailart", label: "Nail Art Studio", icon: "💅" },
   { value: "makeup", label: "Makeup Artist", icon: "💄" },
-  { value: "gym", label: "Gym/Fitness", icon: "💪" },
-  { value: "spa", label: "Spa & Wellness", icon: "🧘" },
+  { value: "spa", label: "Spa & Wellness", icon: "🧖‍♀️" },
+  { value: "gym", label: "Gym / Fitness", icon: "💪" },
+  { value: "tattoo-studio", label: "Tattoo Studio", icon: "🎨" },
+  {
+    value: "laser-hair-removal",
+    label: "Laser Hair Removal Clinic",
+    icon: "⚡",
+  },
+  { value: "chiropractic-clinic", label: "Chiropractic Clinic", icon: "💆‍♂️" },
+  { value: "catering-service", label: "Catering Service", icon: "🍲" },
+  { value: "car-wash", label: "Car Wash", icon: "🚘" },
+  { value: "pet-grooming", label: "Pet Grooming", icon: "🐶" },
+  { value: "photography-studio", label: "Photography Studio", icon: "📸" },
+  { value: "real-estate-agency", label: "Real Estate Agency", icon: "🏠" },
+  { value: "driving-school", label: "Driving School", icon: "🚗" },
+  { value: "tax-consultant", label: "Tax Consultant", icon: "📊" },
+  { value: "solicitor", label: "Solicitor / Law Firm", icon: "⚖️" },
 ];
 
 export default function ChatDemoSection() {

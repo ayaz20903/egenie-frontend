@@ -336,17 +336,6 @@ import whatsappSection5 from "../../../public/whatsappSection5.png";
 const slides = [
   {
     id: 1,
-    title: "Drip Campaigns",
-    heading: "Smart, Automated Customer Journeys",
-    features: [
-      "Build engaging, step-by-step conversations that nurture leads over days or weeks.",
-      "Personalize every interaction with branching paths that adapt to user actions.",
-      "Trigger your campaigns automatically from other apps or APIs — and let automation do the work.",
-    ],
-    img: whatsappSection5,
-  },
-  {
-    id: 2,
     title: "AI Chatbot",
     heading: "24x7 Assistant for Pre & Post-Sales Queries",
     features: [
@@ -357,7 +346,7 @@ const slides = [
     img: whatsappSection4,
   },
   {
-    id: 3,
+    id: 2,
     title: "Broadcast Marketing",
     heading: "Personalized Messaging at Scale",
     features: [
@@ -366,6 +355,17 @@ const slides = [
       "Track opens, clicks, and conversions — all in one place.",
     ],
     img: whatsappSection,
+  },
+  {
+    id: 3,
+    title: "Smart Engagement Journeys",
+    heading: "Smart, Automated Customer Journeys",
+    features: [
+      "Build engaging, step-by-step conversations that nurture leads over days or weeks.",
+      "Personalize every interaction with branching paths that adapt to user actions.",
+      "Trigger your campaigns automatically from other apps or APIs — and let automation do the work.",
+    ],
+    img: whatsappSection5,
   },
 ];
 
@@ -391,7 +391,7 @@ export default function WhatsAppMarketingSection() {
   };
 
   return (
-    <section className="w-full bg-white pt-20 pb-30 overflow-hidden">
+    <section className="w-full bg-white pt-10 pb-30 overflow-hidden">
       {/* Heading */}
       <div className="text-center mb-[30px] lg:mb-[50px] px-6">
         <h3 className="text-3xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent">
