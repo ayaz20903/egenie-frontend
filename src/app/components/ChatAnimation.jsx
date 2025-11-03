@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import WebsiteChatbotImg from "../../../public/WebsiteChatbot-bg.png";
 import WebsiteChatbotChat from "../../../public/WebsiteChatbot-chat.png";
 import WebsiteChatbotArrow from "../../../public/WebsiteChatbot-arrow.png";
+import phoneMockup from "../../../public/phone-mockup.png";
 
 export default function ChatAnimation() {
   return (

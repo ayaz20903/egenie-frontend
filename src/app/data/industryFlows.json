@@ -2,7 +2,7 @@
   "barbershop": [
     {
       "id": "start",
-      "message": "👋 Welcome to {shopName}! How can I help you today?",
+      "message": "👋 Welcome to {shopName}! I am {selectedAvatar.name}, how can I help you today?",
       "options": [
         { "label": "Book Appointment", "next": "book" },
         { "label": "View Services & Prices", "next": "services" },
