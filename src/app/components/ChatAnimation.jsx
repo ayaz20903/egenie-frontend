@@ -153,14 +153,14 @@ export default function ChatAnimation() {
               loop
               muted
               playsInline
-              className="absolute top-[110px] lg:top-[150px] left-[7%] w-[86%] h-fit object-contain overflow-hidden z-40"
+              className="absolute top-[110px] lg:top-[150px] left-[7%] w-[86%] h-fit object-contain overflow-hidden z-20"
             />
             {/* Phone frame image on top */}
             <Image
               src={phoneMockup}
               alt="Phone frame"
               fill
-              className="object-contain z-20 pointer-events-none"
+              className="object-contain z-10 pointer-events-none"
               priority
             />
           </div>
