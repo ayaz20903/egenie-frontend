@@ -146,7 +146,7 @@
   "restaurant": [
     {
       "id": "start",
-      "message": "🍽️ Welcome to {shopName}! How can we serve you today?",
+      "message": "🍽️ Welcome to {shopName}! I am {selectedAvatar.name}, how can I help you today?",
       "options": [
         { "label": "Make Reservation", "next": "reservation" },
         { "label": "Delivery", "next": "takeout" },
@@ -273,7 +273,7 @@
   "restaurant1": [
     {
       "id": "start",
-      "message": "🍽️ Welcome to FoodieHub! How can we serve you today?",
+      "message": "🍽️ Welcome to {shopName}! I am {selectedAvatar.name}, how can I help you today?",
       "options": [
         { "label": "Make Reservation", "next": "reservation" },
         { "label": "Delivery", "next": "menu" },
@@ -330,7 +330,7 @@
   "salon": [
     {
       "id": "start",
-      "message": "💅 Welcome to {shopName}! How can we pamper you today?",
+      "message": "💅 Welcome to {shopName}! I am {selectedAvatar.name}, how can I help you today?",
       "options": [
         { "label": "Book Service", "next": "bookService" },
         { "label": "View Services", "next": "services" },
@@ -381,7 +381,7 @@
   "nailart": [
     {
       "id": "start",
-      "message": "💅 Welcome to {shopName}! Ready for some nail art magic?",
+      "message": "💅 Welcome to {shopName}! I am {selectedAvatar.name}, Ready for some nail art magic?",
       "options": [
         { "label": "Book Nail Art", "next": "bookNail" },
         { "label": "View Designs", "next": "viewDesigns" },
@@ -492,7 +492,7 @@
   "solicitor": [
     {
       "id": "start",
-      "message": "⚖️ Welcome to {shopName}! We’re here to help with your legal needs. How can we assist you today?",
+      "message": "⚖️ Welcome to {shopName}! I am {selectedAvatar.name}, I am here to help with your legal needs. How can I assist you today?",
       "options": [
         { "label": "Book Consultation", "next": "consultationType" },
         { "label": "View Legal Services", "next": "viewServices" },
@@ -713,7 +713,7 @@
   "makeup": [
     {
       "id": "start",
-      "message": "💄 Welcome to {shopName}! Let's make you feel beautiful!",
+      "message": "💄 Welcome to {shopName}! I am {selectedAvatar.name}, Let's make you feel beautiful!",
       "options": [
         { "label": "Book Makeup", "next": "bookMakeup" },
         { "label": "Bridal Makeup", "next": "bridal" },
@@ -763,7 +763,7 @@
   "gym": [
     {
       "id": "start",
-      "message": "💪 Welcome to {shopName}! Ready to get fit?",
+      "message": "💪 Welcome to {shopName}! I am {selectedAvatar.name}, Ready to get fit?",
       "options": [
         { "label": "Join Gym", "next": "membership" },
         { "label": "Personal Training", "next": "training" },
@@ -803,7 +803,7 @@
   "spa": [
     {
       "id": "start",
-      "message": "🧘 Welcome to {shopName}! Time to relax and rejuvenate!",
+      "message": "🧘 Welcome to {shopName}! I am {selectedAvatar.name}, Time to relax and rejuvenate!",
       "options": [
         { "label": "Book Treatment", "next": "bookTreatment" },
         { "label": "Spa Packages", "next": "packages" },

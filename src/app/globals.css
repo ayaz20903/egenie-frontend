@@ -161,3 +161,24 @@ body {
     inset: 0;
   }
 }
+/* .phone-container {
+  position: relative;
+  width: 340;
+  height: 640px;
+}
+
+.phone-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.phone-video {
+  object-fit: cover;
+  object-fit: cover;
+  width: 87%;
+  height: 90%;
+  position: absolute;
+  top: 37px;
+  left: 22px;
+} */

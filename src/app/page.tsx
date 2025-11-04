@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import ContactSection from "./components/ContactSection";
 import ChatAnimation from "./components/ChatAnimation";
 import ChatbotRestaurant from "./components/ChatbotRestaurant";
+import ChatbotGroceryStore from "./components/ChatbotGroceryStore";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
         <HeroSection />
         <ChatAnimation />
         <ChatDemoSection />
-        <ChatbotRestaurant />
+        {/* <ChatbotRestaurant /> */}
+        <ChatbotGroceryStore />
+
         <WebsiteChatbot />
       </div>
       <AudienceSlider />
