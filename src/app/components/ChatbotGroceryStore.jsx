@@ -755,16 +755,30 @@ export default function GroceryStoreChat() {
   ];
 
   // 🧩 Auto-scroll only when needed
+  // useEffect(() => {
+  //   const container = chatContainerRef.current;
+  //   if (!container) return;
+  //   const isScrolledToBottom =
+  //     container.scrollHeight - container.scrollTop <=
+  //     container.clientHeight + 50;
+  //   if (isScrolledToBottom) {
+  //     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [messages]);
+
   useEffect(() => {
     const container = chatContainerRef.current;
     if (!container) return;
-    const isScrolledToBottom =
-      container.scrollHeight - container.scrollTop <=
-      container.clientHeight + 50;
-    if (isScrolledToBottom) {
-      chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages]);
+
+    const timeout = setTimeout(() => {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+    }, 50);
+
+    return () => clearTimeout(timeout);
+  }, [messages, step]);
 
   const addMessage = (msg) => setMessages((prev) => [...prev, msg]);
 
@@ -958,92 +972,6 @@ export default function GroceryStoreChat() {
                         ))}
                       </div>
                     )}
-
-                    {/* {msg.input === "name" && (
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        className="w-[90%] border rounded-lg px-2 py-1 text-sm mt-2 ms-3"
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" && e.target.value.trim()) {
-                            handleUserInput("name", e.target.value);
-                            addMessage({ from: "user", text: e.target.value });
-                            addMessage({
-                              from: "bot",
-                              text: "Type your full address:",
-                              input: "address",
-                            });
-                          }
-                        }}
-                      />
-                    )}
-
-                    {msg.input === "address" && (
-                      <input
-                        type="text"
-                        placeholder="Enter your address"
-                        className="w-[90%] border rounded-lg px-2 py-1 text-sm mt-2 ms-3"
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" && e.target.value.trim()) {
-                            handleUserInput("address", e.target.value);
-                            addMessage({ from: "user", text: e.target.value });
-                            handleAddressSubmit();
-                          }
-                        }}
-                      />
-                    )} */}
-
-                    {/* {(msg.input === "name" || msg.input === "address") && (
-                      <div className="bg-[#F0F0F0] p-2 rounded-b-xl mt-2">
-                        <form
-                          onSubmit={(e) => {
-                            e.preventDefault();
-                            const inputValue =
-                              e.target.elements.userInput.value.trim();
-                            if (!inputValue) return;
-
-                            if (msg.input === "name") {
-                              handleUserInput("name", inputValue);
-                              addMessage({ from: "user", text: inputValue });
-                              addMessage({
-                                from: "bot",
-                                text: "Type your full address:",
-                                input: "address",
-                              });
-                            } else if (msg.input === "address") {
-                              handleUserInput("address", inputValue);
-                              addMessage({ from: "user", text: inputValue });
-                              handleAddressSubmit();
-                            }
-
-                            e.target.reset();
-                          }}
-                          className="flex items-center gap-2"
-                        >
-                          <div className="flex-1 bg-white rounded-full px-4 py-2 flex items-center">
-                            <input
-                              type="text"
-                              name="userInput"
-                              placeholder={
-                                msg.input === "name"
-                                  ? "Enter your name"
-                                  : "Enter your address"
-                              }
-                              className="flex-1 text-sm focus:outline-none text-black bg-transparent"
-                            />
-                            <span className="text-gray-400 text-lg">😊</span>
-                          </div>
-                          <button
-                            type="submit"
-                            className="w-8 h-8 bg-[#25D366] text-white rounded-full flex items-center justify-center text-sm"
-                          >
-                            ➤
-                          </button>
-                        </form>
-                      </div>
-                    )} */}
-
-                    {/* Sticky WhatsApp-style input bar */}
                   </div>
                 </motion.div>
               ))}
@@ -1196,6 +1124,8 @@ export default function GroceryStoreChat() {
                   https://freshmart.paylink/demo
                 </div>
               )}
+
+              <div ref={chatEndRef} />
             </div>
 
             <div className="bg-[#F0F0F0] p-3">
@@ -1221,11 +1151,11 @@ export default function GroceryStoreChat() {
                   type="submit"
                   disabled={!isInputActive || !userInput.trim()}
                   className={`w-10 h-10 rounded-full flex items-center justify-center transition
-        ${
-          isInputActive && userInput.trim()
-            ? "bg-[#25D366] text-white"
-            : "bg-gray-300 text-gray-500 cursor-not-allowed"
-        }`}
+                    ${
+                      isInputActive && userInput.trim()
+                        ? "bg-[#25D366] text-white"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
                 >
                   ➤
                 </button>

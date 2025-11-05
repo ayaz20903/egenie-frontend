@@ -491,7 +491,7 @@ export default function ChatDemoSection() {
   return (
     <section
       id="demo"
-      className="container m-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 text-white min-h-screen"
+      className="container relative m-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 text-white min-h-screen"
     >
       {/* LEFT SIDE */}
       <motion.div
@@ -530,11 +530,11 @@ export default function ChatDemoSection() {
               value={shopName}
               onChange={(e) => setShopName(e.target.value)}
               placeholder="Enter your shop name"
-              className="px-6 py-4 rounded-2xl w-full bg-[#151523] border-2 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 text-lg"
+              className="px-6 py-4 rounded-2xl h-[70px] w-full bg-[#151523] border-2 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 text-lg"
             />
             <button
               onClick={handleStartDemo}
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] hover:shadow-[0_0_25px_#9A5CFF] transition-all duration-300 font-semibold text-lg"
+              className="px-8 py-4 w-[200px] rounded-2xl bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] hover:shadow-[0_0_25px_#9A5CFF] transition-all duration-300 font-semibold text-lg"
             >
               See Demo
             </button>
@@ -594,7 +594,7 @@ export default function ChatDemoSection() {
             <div className="w-full h-full bg-whitesmoke rounded-[32px] flex flex-col items-center justify-center">
               <Image src={genieImage} alt="Genie" />
               <h3 className="text-2xl font-bold text-gray-700 mt-8 text-center px-4">
-                Wish for More Leads? eGenie Grants It Instantly.
+                Wish for More Leads? eGeniePlus Grants It Instantly.
               </h3>
             </div>
           </div>
@@ -678,6 +678,12 @@ export default function ChatDemoSection() {
           </motion.div>
         )}
       </motion.div>
+
+      <Image
+        src={arrow}
+        alt="arrow"
+        className="hidden lg:block top-[33%] right-[39%] object-contain z-10 absolute"
+      />
     </section>
   );
 }

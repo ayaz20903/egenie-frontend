@@ -91,8 +91,8 @@ export default function WebsiteChatbot() {
             Let your website do the talking!
           </h2>
           <p className="text-white text-lg max-w-md">
-            eGenie studies your site and automatically answers visitor questions
-            in real time.
+            eGeniePlus studies your site and automatically answers visitor
+            questions in real time.
           </p>
 
           <div className="flex flex-col gap-4 pt-4 signin-buttons">
@@ -138,8 +138,8 @@ export default function WebsiteChatbot() {
             Let your website do the talking!
           </h2>
           <p className="text-white text-lg max-w-md">
-            eGenie studies your site and automatically answers visitor questions
-            in real time.
+            eGeniePlus studies your site and automatically answers visitor
+            questions in real time.
           </p>
 
           <div className="flex flex-col gap-4 pt-4 signin-buttons">

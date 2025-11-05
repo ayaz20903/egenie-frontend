@@ -38,7 +38,7 @@ export default function HeroSection() {
       >
         From “Hi” to “Buy”{" "}
         <span className="bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] bg-clip-text text-transparent">
-          eGenie Makes It Happen
+          eGeniePlus Makes It Happen
         </span>
       </motion.h1>
 

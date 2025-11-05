@@ -16,7 +16,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src={logo}
-            alt="eGenie Logo"
+            alt="eGeniePlus Logo"
             width={100}
             height={40}
             className="object-contain"

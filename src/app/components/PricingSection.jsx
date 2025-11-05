@@ -79,7 +79,7 @@ export default function PricingSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Unlock the power of eGenie — whether you're exploring, creating, or
+          Unlock the power of Plus whether you're exploring, creating, or
           automating your workflow. Find the plan that fits your journey.
         </motion.p>
 

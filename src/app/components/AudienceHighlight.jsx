@@ -32,8 +32,8 @@ export default function AudienceHighlight() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="text-white mb-8 max-w-md"
             >
-              eGenie makes every chat feel human. Smart, natural, and tailored —
-              just like a real conversation should be.
+              eGeniePlus makes every chat feel human. Smart, natural, and
+              tailored — just like a real conversation should be.
             </motion.p>
 
             <motion.div
@@ -69,8 +69,8 @@ export default function AudienceHighlight() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
               className="text-white mb-8 max-w-md"
             >
-              eGenie understands your visitors no matter where they’re from. It
-              detects their language and responds like a local.
+              eGeniePlus understands your visitors no matter where they’re from.
+              It detects their language and responds like a local.
             </motion.p>
 
             <motion.div

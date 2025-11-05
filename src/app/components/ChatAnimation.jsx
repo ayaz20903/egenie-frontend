@@ -98,7 +98,7 @@ export default function ChatAnimation() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-6xl leading-13 font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"
           >
-            Let eGenie handle your bookings while you focus on business.
+            Let eGeniePlus handle your bookings while you focus on business.
           </motion.h2>
 
           <motion.p
@@ -153,7 +153,7 @@ export default function ChatAnimation() {
               loop
               muted
               playsInline
-              className="absolute top-[110px] lg:top-[150px] left-[7%] w-[86%] h-fit object-contain overflow-hidden z-20"
+              className="absolute top-[110px] lg:top-[150px] left-[7%] w-[86%] object-contain overflow-hidden z-20"
             />
             {/* Phone frame image on top */}
             <Image
