@@ -565,6 +565,7 @@ export default function GroceryStoreChat() {
   const [openCategory, setOpenCategory] = useState(null);
   const chatContainerRef = useRef(null);
   const chatEndRef = useRef(null);
+  const [userInput, setUserInput] = useState("");
 
   const menuCategories = [
     {
@@ -572,21 +573,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 1,
-          name: "Tata Tea Gold (500g)",
+          name: "Nescafe Gold Blend",
           price: 4.99,
           image: "/coffee1.webp",
         },
         {
           id: 2,
-          name: "Nescafé Classic (200g)",
+          name: "Lor Intense 100g ",
           price: 6.49,
-          image: "/coffee1.webp",
+          image: "/coffee2.webp",
         },
         {
           id: 3,
-          name: "Bru Instant Coffee (100g)",
+          name: "Twinings Pure Peppermint 40g",
           price: 3.99,
-          image: "/coffee1.webp",
+          image: "/coffee3.webp",
         },
       ],
     },
@@ -595,21 +596,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 4,
-          name: "Tropicana Orange (1L)",
+          name: "One Stop Summer Fruits Squash ",
           price: 2.99,
-          image: "/coffee1.webp",
+          image: "/js1.webp",
         },
         {
           id: 5,
-          name: "Real Mixed Fruit Juice (1L)",
+          name: "Robinsons Summer Fruits Squash",
           price: 2.49,
-          image: "/coffee1.webp",
+          image: "/js2.webp",
         },
         {
           id: 6,
-          name: "Kissan Mango Squash (750ml)",
+          name: "Vimto Real Fruit Squash",
           price: 3.29,
-          image: "/coffee1.webp",
+          image: "/js3.webp",
         },
       ],
     },
@@ -618,21 +619,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 7,
-          name: "Amul Toned Milk (1L)",
+          name: "Cathedral City Mature Cheddar",
           price: 1.49,
-          image: "/coffee1.webp",
+          image: "/md1.webp",
         },
         {
           id: 8,
-          name: "Amul Butter (500g)",
+          name: "Elmlea Double Alternative to Cream",
           price: 3.99,
-          image: "/coffee1.webp",
+          image: "/md2.webp",
         },
         {
           id: 9,
-          name: "Mother Dairy Curd (400g)",
+          name: "Muller British Whole Milk",
           price: 1.99,
-          image: "/coffee1.webp",
+          image: "/md3.webp",
         },
       ],
     },
@@ -641,21 +642,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 10,
-          name: "Maggi Noodles (4 Pack)",
+          name: "Tesco Classic Margherita Pizza ",
           price: 2.99,
-          image: "/coffee1.webp",
+          image: "/qm1.webp",
         },
         {
           id: 11,
-          name: "Kissan Tomato Ketchup (1kg)",
+          name: "Tesco Apple Lattice Pie",
           price: 3.49,
-          image: "/coffee1.webp",
+          image: "/qm2.webp",
         },
         {
           id: 12,
-          name: "Ready-to-Eat Dal Makhani",
+          name: "Tesco Tomato & Basil Sauce",
           price: 4.49,
-          image: "/coffee1.webp",
+          image: "/qm3.webp",
         },
       ],
     },
@@ -664,21 +665,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 13,
-          name: "Red Bull (250ml)",
+          name: "Lucozade Sport Drink",
           price: 2.29,
-          image: "/coffee1.webp",
+          image: "/ed1.webp",
         },
         {
           id: 14,
-          name: "Monster Energy (500ml)",
+          name: "Monster Energy Drink",
           price: 2.99,
-          image: "/coffee1.webp",
+          image: "/ed2.webp",
         },
         {
           id: 15,
-          name: "Gatorade Orange (500ml)",
+          name: "Red Bull Energy",
           price: 1.99,
-          image: "/coffee1.webp",
+          image: "/ed3.webp",
         },
       ],
     },
@@ -687,21 +688,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 16,
-          name: "Amul Vanilla Ice Cream (1L)",
+          name: "Chocolate Cake",
           price: 3.99,
-          image: "/coffee1.webp",
+          image: "/dessert1.webp",
         },
         {
           id: 17,
-          name: "Kwality Walls Cornetto",
+          name: "Magnum",
           price: 1.99,
-          image: "/coffee1.webp",
+          image: "/dessert2.webp",
         },
         {
           id: 18,
-          name: "Hershey’s Chocolate Syrup (650g)",
+          name: "Strawberry Cheesecake",
           price: 4.29,
-          image: "/coffee1.webp",
+          image: "/dessert3.webp",
         },
       ],
     },
@@ -710,21 +711,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 19,
-          name: "Kingfisher Premium (650ml)",
+          name: "Murohy's 4x400ml)",
           price: 2.49,
-          image: "/coffee1.webp",
+          image: "/beer3.webp",
         },
         {
           id: 20,
-          name: "Budweiser (500ml)",
+          name: "Budweiser (600ml)",
           price: 2.99,
-          image: "/coffee1.webp",
+          image: "/beer1.webp",
         },
         {
           id: 21,
-          name: "Heineken (330ml)",
+          name: "Heineken     (330ml)",
           price: 2.79,
-          image: "/coffee1.webp",
+          image: "/beer2.webp",
         },
       ],
     },
@@ -733,21 +734,21 @@ export default function GroceryStoreChat() {
       items: [
         {
           id: 22,
-          name: "Sula Red Wine (750ml)",
+          name: "Fris Vodka 1 Litre",
           price: 11.99,
-          image: "/coffee1.webp",
+          image: "/ws1.webp",
         },
         {
           id: 23,
-          name: "Old Monk Rum (750ml)",
+          name: "Imperial Vodka 20cl",
           price: 8.99,
-          image: "/coffee1.webp",
+          image: "/ws2.webp",
         },
         {
           id: 24,
-          name: "Smirnoff Vodka (1L)",
+          name: "Bacardi Carta Blanca rum",
           price: 13.99,
-          image: "/coffee1.webp",
+          image: "/ws3.webp",
         },
       ],
     },
@@ -773,16 +774,75 @@ export default function GroceryStoreChat() {
     if (option === "Delivery" || option === "View Menu") {
       addMessage({
         from: "bot",
-        text: "Here’s our delicious menu 🍕",
+        text: "🛒 Here’s our wide range of grocery categories:",
       });
       setStep("menuPreview");
     } else if (option === "Contact Us") {
       addMessage({
         from: "bot",
-        text: "📞 You can reach us at 0203 123 4567 or visit pizzahaven.co.uk",
+        text: "📞 You can reach us at 0203 123 4567 or visit freshmart.com",
       });
     }
   };
+
+  //
+
+  const handleUserInputSubmit = (e) => {
+    e.preventDefault();
+    if (!userInput.trim()) return;
+
+    addMessage({ from: "user", text: userInput });
+
+    // Capture locally (avoid async step confusion)
+    let nextStep = step;
+
+    if (step === "checkout" || step === "askName") {
+      handleUserInput("name", userInput);
+      addMessage({
+        from: "bot",
+        text: "Type your full address:",
+        input: "address",
+      });
+      nextStep = "askAddress";
+    } else if (step === "askAddress") {
+      handleUserInput("address", userInput);
+      handleAddressSubmit();
+      nextStep = "confirm";
+    }
+
+    setUserInput("");
+    setStep(nextStep);
+  };
+
+  const handleUserInput = (field, value) =>
+    setUserDetails((prev) => ({ ...prev, [field]: value }));
+
+  const handleAddressSubmit = () => {
+    const total = Object.values(cart).reduce(
+      (sum, item) => sum + item.price * item.qty,
+      0
+    );
+    setStep("confirm");
+    addMessage({
+      from: "bot",
+      text: `Confirm order for ${userDetails.name}, ${
+        userDetails.address
+      } — Total £${total.toFixed(2)}?`,
+      options: ["Proceed to Pay", "Cancel"],
+    });
+  };
+
+  const activeInput =
+    messages
+      .slice()
+      .reverse()
+      .find((msg) => msg.input)?.input ||
+    (step === "checkout" ? "name" : step === "askAddress" ? "address" : null);
+
+  const isInputActive =
+    step === "checkout" || step === "askName" || step === "askAddress";
+
+  //
 
   const handleViewItems = () => {
     setStep("menu");
@@ -821,21 +881,6 @@ export default function GroceryStoreChat() {
     });
   };
 
-  const handleUserInput = (field, value) => {
-    setUserDetails((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleAddressSubmit = () => {
-    setStep("confirm");
-    addMessage({
-      from: "bot",
-      text: `Confirm order for ${userDetails.name}, ${
-        userDetails.address
-      } — Total £${cartTotal.toFixed(2)}?`,
-      options: ["Proceed to Pay", "Cancel"],
-    });
-  };
-
   const handleFinalOption = (option) => {
     addMessage({ from: "user", text: option });
 
@@ -849,7 +894,7 @@ export default function GroceryStoreChat() {
       addMessage({
         from: "bot",
         text: "❌ Order cancelled. Hope to see you soon!",
-        options: ["Make Reservation", "Delivery", "View Menu", "Contact Us"],
+        options: ["Delivery", "View Menu", "Contact Us"],
       });
       setStep("start");
     }
@@ -858,7 +903,7 @@ export default function GroceryStoreChat() {
   const handlePaymentClick = () => {
     addMessage({
       from: "bot",
-      text: "✅ Payment received! Your delicious order is on its way 🍕🚀",
+      text: "✅ Payment received! Your order is on its way 🚀",
     });
     setStep("done");
   };
@@ -876,7 +921,7 @@ export default function GroceryStoreChat() {
 
             <div
               ref={chatContainerRef}
-              className="flex-1 overflow-y-auto scroll-smooth p-3 space-y-2 bg-[url('/whatsappbg.png')] bg-cover rounded-b-2xl text-black"
+              className="flex-1 overflow-y-auto scroll-smooth p-3 space-y-2 bg-[url('/whatsappbg.png')] bg-cover  text-black"
             >
               {messages.map((msg, index) => (
                 <motion.div
@@ -914,7 +959,7 @@ export default function GroceryStoreChat() {
                       </div>
                     )}
 
-                    {msg.input === "name" && (
+                    {/* {msg.input === "name" && (
                       <input
                         type="text"
                         placeholder="Enter your name"
@@ -946,7 +991,59 @@ export default function GroceryStoreChat() {
                           }
                         }}
                       />
-                    )}
+                    )} */}
+
+                    {/* {(msg.input === "name" || msg.input === "address") && (
+                      <div className="bg-[#F0F0F0] p-2 rounded-b-xl mt-2">
+                        <form
+                          onSubmit={(e) => {
+                            e.preventDefault();
+                            const inputValue =
+                              e.target.elements.userInput.value.trim();
+                            if (!inputValue) return;
+
+                            if (msg.input === "name") {
+                              handleUserInput("name", inputValue);
+                              addMessage({ from: "user", text: inputValue });
+                              addMessage({
+                                from: "bot",
+                                text: "Type your full address:",
+                                input: "address",
+                              });
+                            } else if (msg.input === "address") {
+                              handleUserInput("address", inputValue);
+                              addMessage({ from: "user", text: inputValue });
+                              handleAddressSubmit();
+                            }
+
+                            e.target.reset();
+                          }}
+                          className="flex items-center gap-2"
+                        >
+                          <div className="flex-1 bg-white rounded-full px-4 py-2 flex items-center">
+                            <input
+                              type="text"
+                              name="userInput"
+                              placeholder={
+                                msg.input === "name"
+                                  ? "Enter your name"
+                                  : "Enter your address"
+                              }
+                              className="flex-1 text-sm focus:outline-none text-black bg-transparent"
+                            />
+                            <span className="text-gray-400 text-lg">😊</span>
+                          </div>
+                          <button
+                            type="submit"
+                            className="w-8 h-8 bg-[#25D366] text-white rounded-full flex items-center justify-center text-sm"
+                          >
+                            ➤
+                          </button>
+                        </form>
+                      </div>
+                    )} */}
+
+                    {/* Sticky WhatsApp-style input bar */}
                   </div>
                 </motion.div>
               ))}
@@ -1094,11 +1191,45 @@ export default function GroceryStoreChat() {
               {step === "payment" && (
                 <div
                   onClick={handlePaymentClick}
-                  className="text-blue-600 underline cursor-pointer mt-3"
+                  className="px-3 text-blue-600 w-fit underline cursor-pointer  py-2 rounded-xl bg-white  rounded-bl-none"
                 >
-                  https://pizzahaven.paylink/demo
+                  https://freshmart.paylink/demo
                 </div>
               )}
+            </div>
+
+            <div className="bg-[#F0F0F0] p-3">
+              <form
+                onSubmit={handleUserInputSubmit}
+                className="flex items-center gap-2"
+              >
+                <div className="flex-1 bg-white rounded-full px-4 py-2 flex items-center">
+                  <input
+                    type="text"
+                    value={userInput}
+                    onChange={(e) => setUserInput(e.target.value)}
+                    placeholder={
+                      isInputActive ? "Type your response..." : "Please wait..."
+                    }
+                    className="flex-1 text-sm focus:outline-none text-black bg-transparent"
+                    disabled={!isInputActive}
+                  />
+                  <span className="text-gray-400 text-lg">😊</span>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={!isInputActive || !userInput.trim()}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition
+        ${
+          isInputActive && userInput.trim()
+            ? "bg-[#25D366] text-white"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+        }`}
+                >
+                  ➤
+                </button>
+              </form>
             </div>
           </div>
         </div>

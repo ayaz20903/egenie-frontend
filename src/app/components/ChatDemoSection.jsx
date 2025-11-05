@@ -325,6 +325,7 @@ import Image from "next/image";
 import MessageBubble from "./MessageBubble";
 import industryFlows from "../data/industryFlows.json";
 import genieImage from "../../../public/genie2.png";
+import arrow from "../../../public/arrow.png";
 
 const avatars = [
   { src: "/avatar1.png", name: "Alex" },
