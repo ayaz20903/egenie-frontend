@@ -6,12 +6,12 @@ import Image from "next/image";
 
 import phoneMockup from "../../../public/phone-mockup3.png";
 
-export default function GroceryStoreChat() {
+export default function Bubbletea() {
   const [step, setStep] = useState("start");
   const [messages, setMessages] = useState([
     {
       from: "bot",
-      text: "👋 Welcome to FreshMart! What would you like to do today?",
+      text: "👋 Welcome to CUPP! What would you like to do today?",
       options: ["Delivery", "View Menu", "Contact Us"],
     },
   ]);
@@ -24,105 +24,61 @@ export default function GroceryStoreChat() {
 
   const menuCategories = [
     {
-      name: "Tea & Coffee",
+      name: "Boba Tea",
       items: [
         {
           id: 1,
-          name: "Nescafe Gold Blend",
+          name: "Matcha Milk Tea",
           price: 4.99,
-          image: "/coffee1.webp",
+          image: "/pizzahub/boba1.webp",
         },
         {
           id: 2,
-          name: "Lor Intense 100g ",
-          price: 6.49,
-          image: "/coffee2.webp",
+          name: "Strawberry Matcha ",
+          price: 5.49,
+          image: "/pizzahub/boba2.webp",
         },
         {
           id: 3,
-          name: "Twinings Pure Peppermint 40g",
-          price: 3.99,
-          image: "/coffee3.webp",
+          name: "Real Blueberry Matcha",
+          price: 5.99,
+          image: "/pizzahub/boba3.webp",
+        },
+        {
+          id: 25,
+          name: "MyProtein Chocolate Milk Tea",
+          price: 7.99,
+          image: "/pizzahub/boba4.webp",
+        },
+        {
+          id: 26,
+          name: "Vanilla Matcha",
+          price: 4.99,
+          image: "/pizzahub/boba5.webp",
+        },
+        {
+          id: 27,
+          name: "Cherry Vanilla Matcha",
+          price: 5.99,
+          image: "/pizzahub/boba6.webp",
+        },
+        {
+          id: 28,
+          name: "Latte Boba",
+          price: 5.99,
+          image: "/pizzahub/boba7.webp",
         },
       ],
     },
+
     {
-      name: "Juice & Squash",
-      items: [
-        {
-          id: 4,
-          name: "One Stop Summer Fruits Squash ",
-          price: 2.99,
-          image: "/js1.webp",
-        },
-        {
-          id: 5,
-          name: "Robinsons Summer Fruits Squash",
-          price: 2.49,
-          image: "/js2.webp",
-        },
-        {
-          id: 6,
-          name: "Vimto Real Fruit Squash",
-          price: 3.29,
-          image: "/js3.webp",
-        },
-      ],
-    },
-    {
-      name: "Milk & Dairy",
-      items: [
-        {
-          id: 7,
-          name: "Cathedral City Mature Cheddar",
-          price: 1.49,
-          image: "/md1.webp",
-        },
-        {
-          id: 8,
-          name: "Elmlea Double Alternative to Cream",
-          price: 3.99,
-          image: "/md2.webp",
-        },
-        {
-          id: 9,
-          name: "Muller British Whole Milk",
-          price: 1.99,
-          image: "/md3.webp",
-        },
-      ],
-    },
-    {
-      name: "Quick Meals",
-      items: [
-        {
-          id: 10,
-          name: "Tesco Classic Margherita Pizza ",
-          price: 2.99,
-          image: "/qm1.webp",
-        },
-        {
-          id: 11,
-          name: "Tesco Apple Lattice Pie",
-          price: 3.49,
-          image: "/qm2.webp",
-        },
-        {
-          id: 12,
-          name: "Tesco Tomato & Basil Sauce",
-          price: 4.49,
-          image: "/qm3.webp",
-        },
-      ],
-    },
-    {
-      name: "Energy Drinks",
+      name: "fizzy Drinks",
       items: [
         {
           id: 13,
-          name: "Lucozade Sport Drink",
+          name: "Coca-Cola",
           price: 2.29,
-          image: "/ed1.webp",
+          image: "/pizzahub/coke.webp",
         },
         {
           id: 14,
@@ -135,75 +91,6 @@ export default function GroceryStoreChat() {
           name: "Red Bull Energy",
           price: 1.99,
           image: "/ed3.webp",
-        },
-      ],
-    },
-    {
-      name: "Desserts & Ice Creams",
-      items: [
-        {
-          id: 16,
-          name: "Chocolate Cake",
-          price: 3.99,
-          image: "/dessert1.webp",
-        },
-        {
-          id: 17,
-          name: "Magnum",
-          price: 1.99,
-          image: "/dessert2.webp",
-        },
-        {
-          id: 18,
-          name: "Strawberry Cheesecake",
-          price: 4.29,
-          image: "/dessert3.webp",
-        },
-      ],
-    },
-    {
-      name: "Beer & Ales",
-      items: [
-        {
-          id: 19,
-          name: "Murohy's 4x400ml)",
-          price: 2.49,
-          image: "/beer3.webp",
-        },
-        {
-          id: 20,
-          name: "Budweiser (600ml)",
-          price: 2.99,
-          image: "/beer1.webp",
-        },
-        {
-          id: 21,
-          name: "Heineken     (330ml)",
-          price: 2.79,
-          image: "/beer2.webp",
-        },
-      ],
-    },
-    {
-      name: "Wines & Spirits",
-      items: [
-        {
-          id: 22,
-          name: "Fris Vodka 1 Litre",
-          price: 11.99,
-          image: "/ws1.webp",
-        },
-        {
-          id: 23,
-          name: "Imperial Vodka 20cl",
-          price: 8.99,
-          image: "/ws2.webp",
-        },
-        {
-          id: 24,
-          name: "Bacardi Carta Blanca rum",
-          price: 13.99,
-          image: "/ws3.webp",
         },
       ],
     },
@@ -237,7 +124,7 @@ export default function GroceryStoreChat() {
     } else if (option === "Contact Us") {
       addMessage({
         from: "bot",
-        text: "📞 You can reach us at 0203 123 4567 or visit freshmart.com",
+        text: "📞 You can reach us at 0203 123 4567 or visit CUPP.com",
       });
     }
   };
@@ -373,7 +260,7 @@ export default function GroceryStoreChat() {
         <div className="absolute top-[46px] h-[83%] rounded-[26px] lg:top-[71px] left-[7.72%] w-[84.5%] lg:h-[83.2%] lg:rounded-[35px] overflow-hidden bg-[#ECE5DD] shadow-inner z-20">
           <div className="h-full bg-white shadow-lg rounded-2xl flex flex-col">
             <div className="bg-[#065E54] text-white p-4 rounded-t-2xl font-semibold">
-              🛒 FreshMart Chat
+              🧋 CUPP Chat
             </div>
 
             <div
@@ -564,7 +451,7 @@ export default function GroceryStoreChat() {
                   onClick={handlePaymentClick}
                   className="px-3 text-blue-600 w-fit underline cursor-pointer  py-2 rounded-xl bg-white  rounded-bl-none"
                 >
-                  https://freshmart.paylink/demo
+                  https://CUPP.paylink/demo
                 </div>
               )}
 

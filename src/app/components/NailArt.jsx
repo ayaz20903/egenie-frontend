@@ -6,12 +6,12 @@ import Image from "next/image";
 
 import phoneMockup from "../../../public/phone-mockup3.png";
 
-export default function GroceryStoreChat() {
+export default function NailArt() {
   const [step, setStep] = useState("start");
   const [messages, setMessages] = useState([
     {
       from: "bot",
-      text: "👋 Welcome to FreshMart! What would you like to do today?",
+      text: "👋 Welcome to Glam! What would you like to do today?",
       options: ["Delivery", "View Menu", "Contact Us"],
     },
   ]);
@@ -24,186 +24,163 @@ export default function GroceryStoreChat() {
 
   const menuCategories = [
     {
-      name: "Tea & Coffee",
+      name: "Ultra Glitter Gel",
       items: [
         {
           id: 1,
-          name: "Nescafe Gold Blend",
-          price: 4.99,
-          image: "/coffee1.webp",
+          name: "ltra Glitter Gel - Silver",
+          price: 8.99,
+          image: "/pizzahub/glam1.jpg",
         },
         {
           id: 2,
-          name: "Lor Intense 100g ",
-          price: 6.49,
-          image: "/coffee2.webp",
+          name: "Ultra Glitter Gel - Dull Gold",
+          price: 8.49,
+          image: "/pizzahub/glam2.jpg",
         },
         {
           id: 3,
-          name: "Twinings Pure Peppermint 40g",
-          price: 3.99,
-          image: "/coffee3.webp",
+          name: "Ultra Glitter Gel - Purple",
+          price: 8.99,
+          image: "/pizzahub/glam3.jpg",
         },
-      ],
-    },
-    {
-      name: "Juice & Squash",
-      items: [
         {
           id: 4,
-          name: "One Stop Summer Fruits Squash ",
-          price: 2.99,
-          image: "/js1.webp",
+          name: "Ultra Glitter Gel - Bight Pink",
+          price: 8.99,
+          image: "/pizzahub/glam4.jpg",
         },
         {
           id: 5,
-          name: "Robinsons Summer Fruits Squash",
-          price: 2.49,
-          image: "/js2.webp",
+          name: "Ultra Glitter Gel - Gold",
+          price: 8.99,
+          image: "/pizzahub/glam5.jpg",
         },
         {
           id: 6,
-          name: "Vimto Real Fruit Squash",
-          price: 3.29,
-          image: "/js3.webp",
+          name: "Ultra Glitter Gel - Rose Pink",
+          price: 8.99,
+          image: "/pizzahub/glam6.jpg",
         },
-      ],
-    },
-    {
-      name: "Milk & Dairy",
-      items: [
         {
           id: 7,
-          name: "Cathedral City Mature Cheddar",
-          price: 1.49,
-          image: "/md1.webp",
+          name: "Ultra Glitter Gel - Blue",
+          price: 8.99,
+          image: "/pizzahub/glam7.jpg",
         },
         {
           id: 8,
-          name: "Elmlea Double Alternative to Cream",
-          price: 3.99,
-          image: "/md2.webp",
+          name: "Ultra Glitter Gel - Light Pink",
+          price: 8.99,
+          image: "/pizzahub/glam8.jpg",
         },
         {
           id: 9,
-          name: "Muller British Whole Milk",
-          price: 1.99,
-          image: "/md3.webp",
+          name: "Ultra Glitter Gel - Rose Gold",
+          price: 8.99,
+          image: "/pizzahub/glam9.jpg",
         },
       ],
     },
+
     {
-      name: "Quick Meals",
+      name: "Mylars Big",
       items: [
         {
           id: 10,
-          name: "Tesco Classic Margherita Pizza ",
-          price: 2.99,
-          image: "/qm1.webp",
+          name: "Mylars Big - Unicorn Circles",
+          price: 2.29,
+          image: "/pizzahub/glam10.jpg",
         },
         {
           id: 11,
-          name: "Tesco Apple Lattice Pie",
-          price: 3.49,
-          image: "/qm2.webp",
+          name: "Mylars Big - Dull Gold Circle",
+          price: 2.99,
+          image: "/pizzahub/glam11.jpg",
         },
         {
           id: 12,
-          name: "Tesco Tomato & Basil Sauce",
-          price: 4.49,
-          image: "/qm3.webp",
+          name: "Mylars Big - Fire Diamonds",
+          price: 1.99,
+          image: "/pizzahub/glam12.jpg",
         },
-      ],
-    },
-    {
-      name: "Energy Drinks",
-      items: [
         {
           id: 13,
-          name: "Lucozade Sport Drink",
-          price: 2.29,
-          image: "/ed1.webp",
+          name: "Mylars Big - Gold Diamond",
+          price: 1.99,
+          image: "/pizzahub/glam13.jpg",
         },
         {
           id: 14,
-          name: "Monster Energy Drink",
-          price: 2.99,
-          image: "/ed2.webp",
+          name: "GLAM Mylars Big - Rose Gold Diamond",
+          price: 1.99,
+          image: "/pizzahub/glam14.jpg",
         },
         {
           id: 15,
-          name: "Red Bull Energy",
+          name: " Mylars Big - Silver Diamond",
           price: 1.99,
-          image: "/ed3.webp",
+          image: "/pizzahub/glam15.jpg",
         },
-      ],
-    },
-    {
-      name: "Desserts & Ice Creams",
-      items: [
         {
           id: 16,
-          name: "Chocolate Cake",
-          price: 3.99,
-          image: "/dessert1.webp",
+          name: " Mylars Small - Unicorn",
+          price: 1.99,
+          image: "/pizzahub/glam16.jpg",
         },
         {
           id: 17,
-          name: "Magnum",
+          name: "Mylars Small - Bright Gold",
           price: 1.99,
-          image: "/dessert2.webp",
+          image: "/pizzahub/glam17.jpg",
         },
         {
           id: 18,
-          name: "Strawberry Cheesecake",
-          price: 4.29,
-          image: "/dessert3.webp",
+          name: "Mylars Small - Copper",
+          price: 1.99,
+          image: "/pizzahub/glam18.jpg",
         },
       ],
     },
+
     {
-      name: "Beer & Ales",
+      name: "3D Powder",
       items: [
         {
           id: 19,
-          name: "Murohy's 4x400ml)",
-          price: 2.49,
-          image: "/beer3.webp",
+          name: " Neon Yellow",
+          price: 2.29,
+          image: "/pizzahub/glam19.jpg",
         },
         {
           id: 20,
-          name: "Budweiser (600ml)",
+          name: "Neon Orange",
           price: 2.99,
-          image: "/beer1.webp",
+          image: "/pizzahub/glam20.jpg",
         },
         {
           id: 21,
-          name: "Heineken     (330ml)",
-          price: 2.79,
-          image: "/beer2.webp",
+          name: "Hot Pink",
+          price: 1.99,
+          image: "/pizzahub/glam21.jpg",
         },
-      ],
-    },
-    {
-      name: "Wines & Spirits",
-      items: [
         {
           id: 22,
-          name: "Fris Vodka 1 Litre",
-          price: 11.99,
-          image: "/ws1.webp",
+          name: "Passion Fruit",
+          price: 1.99,
+          image: "/pizzahub/glam22.jpg",
         },
         {
           id: 23,
-          name: "Imperial Vodka 20cl",
-          price: 8.99,
-          image: "/ws2.webp",
+          name: "Neon Blue",
+          price: 1.99,
+          image: "/pizzahub/glam23.jpg",
         },
         {
           id: 24,
-          name: "Bacardi Carta Blanca rum",
-          price: 13.99,
-          image: "/ws3.webp",
+          name: "Neon Green",
+          price: 1.99,
+          image: "/pizzahub/glam24.jpg",
         },
       ],
     },
@@ -237,7 +214,7 @@ export default function GroceryStoreChat() {
     } else if (option === "Contact Us") {
       addMessage({
         from: "bot",
-        text: "📞 You can reach us at 0203 123 4567 or visit freshmart.com",
+        text: "📞 You can reach us at 0203 123 4567 or visit glam.com",
       });
     }
   };
@@ -373,7 +350,7 @@ export default function GroceryStoreChat() {
         <div className="absolute top-[46px] h-[83%] rounded-[26px] lg:top-[71px] left-[7.72%] w-[84.5%] lg:h-[83.2%] lg:rounded-[35px] overflow-hidden bg-[#ECE5DD] shadow-inner z-20">
           <div className="h-full bg-white shadow-lg rounded-2xl flex flex-col">
             <div className="bg-[#065E54] text-white p-4 rounded-t-2xl font-semibold">
-              🛒 FreshMart Chat
+              💅🏻 Glam Chat
             </div>
 
             <div
@@ -564,7 +541,7 @@ export default function GroceryStoreChat() {
                   onClick={handlePaymentClick}
                   className="px-3 text-blue-600 w-fit underline cursor-pointer  py-2 rounded-xl bg-white  rounded-bl-none"
                 >
-                  https://freshmart.paylink/demo
+                  https://glam.paylink/demo
                 </div>
               )}
 
