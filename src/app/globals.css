@@ -182,3 +182,7 @@ body {
   top: 37px;
   left: 22px;
 } */
+
+.arrow-img {
+  transform: scaleX(-1);
+}

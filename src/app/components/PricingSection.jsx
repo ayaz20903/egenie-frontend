@@ -8,48 +8,48 @@ export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
 
   const plans = [
-    {
-      name: "Mini Genie",
-      monthly: "Free",
-      yearly: "Free",
-      desc: "Perfect for new users exploring what Genie can do. Get daily insights and responses for free.",
-      gradient: "from-[#1f2937] to-[#111827]",
-      features: [
-        "Limited queries per day",
-        "Basic conversation flow",
-        "Access to core AI tools",
-        "Email support only",
-        "No custom integrations",
-      ],
-      cta: "Start Free",
-    },
+    // {
+    //   name: "Mini Genie",
+    //   monthly: "Free",
+    //   yearly: "Free",
+    //   desc: "Perfect for new users exploring what Genie can do. Get daily insights and responses for free.",
+    //   gradient: "from-[#1f2937] to-[#111827]",
+    //   features: [
+    //     "Limited queries per day",
+    //     "Basic conversation flow",
+    //     "Access to core AI tools",
+    //     "Email support only",
+    //     "No custom integrations",
+    //   ],
+    //   cta: "Start Free",
+    // },
     {
       name: "Smart Genie",
-      monthly: 15.99,
-      yearly: 15.99 * 12 * 0.8,
+      monthly: 69.99,
+      yearly: 49.99 * 12 * 0.9,
       desc: "Ideal for professionals who need consistent help managing content, research, and automation.",
       gradient: "from-[#3730a3] to-[#6d28d9]",
       features: [
-        "Up to 1,000 queries/month",
+        "Up to 10,000 messages/month",
         "Smart memory & personalization",
-        "AI-powered writing assistant",
         "Access to analytics dashboard",
         "Priority email & chat support",
+        "Single Bots",
       ],
       cta: "Upgrade Now",
     },
     {
       name: "Super Genie",
-      monthly: 22.99,
-      yearly: 22.99 * 12 * 0.8,
-      desc: "For teams and power users. Get unlimited queries, advanced AI models, and full integration power.",
+      monthly: 99.99,
+      yearly: 79.99 * 12 * 0.9,
+      desc: "For teams and power messages. Get unlimited queries, advanced AI models, and full integration power.",
       gradient: "from-[#6d28d9] to-[#db2777]",
       features: [
-        "Unlimited queries",
-        "Full API & custom integrations",
-        "Team access (up to 10 users)",
-        "Real-time analytics dashboard",
+        "Up to 25,000 messages/month",
+        "Smart memory & personalization",
+        "Access to analytics dashboard",
         "24/7 premium support",
+        "3 Bots",
       ],
       highlight: true,
       cta: "Go Super",
@@ -73,7 +73,7 @@ export default function PricingSection() {
         </motion.h2>
 
         {/* Subtext */}
-        <motion.p
+        {/* <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -81,7 +81,19 @@ export default function PricingSection() {
         >
           Unlock the power of Plus whether you're exploring, creating, or
           automating your workflow. Find the plan that fits your journey.
-        </motion.p>
+        </motion.p> */}
+
+        <motion.h3
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-4xl md:text45xl font-bold mb-6"
+        >
+          <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
+            £398
+          </span>{" "}
+          setup fee + 1 month free + free shopify website
+        </motion.h3>
 
         {/* Toggle Switch */}
         <motion.div
@@ -115,12 +127,12 @@ export default function PricingSection() {
               isYearly ? "text-indigo-400 font-semibold" : "text-gray-400"
             }`}
           >
-            Yearly <span className="text-xs text-yellow-400">(Save 20%)</span>
+            Yearly <span className="text-xs text-yellow-400">(Save 10%)</span>
           </span>
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           {plans.map((plan, i) => (
             <motion.div
               key={i}

@@ -10,11 +10,11 @@ import PricingSection from "./components/PricingSection";
 import Header from "./components/Header";
 import ContactSection from "./components/ContactSection";
 import ChatAnimation from "./components/ChatAnimation";
-import ChatbotRestaurant from "./components/ChatbotRestaurant";
-import ChatbotGroceryStore from "./components/ChatbotGroceryStore";
-import NailArt from "./components/NailArt";
-import PizzaShopChat from "./components/PizzaShopChat";
-import Bubbletea from "./components/Bubbletea";
+import CaseStudies from "./components/CaseStudies";
+// import ChatbotGroceryStore from "./components/ChatbotGroceryStore";
+// import NailArt from "./components/NailArt";
+// import PizzaShopChat from "./components/PizzaShopChat";
+// import Bubbletea from "./components/Bubbletea";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -26,11 +26,12 @@ export default function Home() {
         <ChatAnimation />
         <ChatDemoSection />
         {/* <ChatbotRestaurant /> */}
-        <ChatbotGroceryStore />
-        <NailArt />
+        {/* <ChatbotGroceryStore /> */}
+        {/* <NailArt />
         <PizzaShopChat />
-        <Bubbletea />
+        <Bubbletea /> */}
 
+        <CaseStudies />
         <WebsiteChatbot />
       </div>
       <AudienceSlider />

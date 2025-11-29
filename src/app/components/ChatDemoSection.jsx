@@ -491,7 +491,7 @@ export default function ChatDemoSection() {
   return (
     <section
       id="demo"
-      className="container relative m-auto flex flex-col lg:flex-row items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 text-white min-h-screen"
+      className="container relative m-auto flex flex-col lg:flex-row-reverse items-center justify-center gap-12 py-15 px-6 lg:py-16 lg:px-16 text-white min-h-screen"
     >
       {/* LEFT SIDE */}
       <motion.div
@@ -682,7 +682,7 @@ export default function ChatDemoSection() {
       <Image
         src={arrow}
         alt="arrow"
-        className="hidden lg:block top-[33%] right-[39%] object-contain z-10 absolute"
+        className="hidden lg:block  top-[33%] right-[47%] object-contain z-10 absolute arrow-img"
       />
     </section>
   );

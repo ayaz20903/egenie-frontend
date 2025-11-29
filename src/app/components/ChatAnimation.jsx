@@ -88,7 +88,7 @@ import phoneMockup from "../../../public/phone-mockup3.png";
 
 export default function ChatAnimation() {
   return (
-    <section className="container WebsiteChatbot m-auto w-full flex flex-col justify-center px-6 md:px-8 lg:px-16 overflow-hidden py-20 lg:py-30">
+    <section className="container WebsiteChatbot m-auto w-full flex flex-col justify-center px-6 md:px-8 lg:px-16 overflow-hidden pt-20 pb-20 lg:pt-30 lg:pb-10">
       <div className="lg:grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* LEFT SECTION */}
         <div className="space-y-6 text-center lg:text-left">

@@ -343,7 +343,7 @@ export default function NailArt() {
   };
 
   return (
-    <div className="flex justify-center items-center px-6 pt-0 pb-30">
+    <div className="flex justify-center items-center px-6 pt-0">
       {/* PHONE FRAME CONTAINER */}
       <div className="relative w-[260px] md:w-[400px] aspect-[9/19]">
         {/* WhatsApp chat inside phone */}
