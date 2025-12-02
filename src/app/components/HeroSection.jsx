@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import genieImage from "../../../public/new-genie.png";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -54,7 +55,7 @@ export default function HeroSection() {
       </motion.p>
 
       {/* CTA Button */}
-      <motion.button
+      {/* <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{
           scale: [1, 1.02, 1],
@@ -66,10 +67,22 @@ export default function HeroSection() {
           boxShadow: "0px 0px 25px #9A5CFF",
         }}
         whileTap={{ scale: 0.98 }}
-        className="mt-10 px-8 py-3 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-white font-semibold rounded-full shadow-lg transition-all z-9"
+        className="mt-10 inline-block bg-transparent"
+      >
+        <Link
+          href="#contact"
+          className="px-8 py-3 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-white font-semibold rounded-full shadow-lg transition-all block text-center"
+        >
+          Get Started Free
+        </Link>
+      </motion.div> */}
+
+      <Link
+        href="#contact"
+        className="px-8 py-3 bg-gradient-to-r cursor-pointer from-[#6D28D9] to-[#3B82F6] text-white font-semibold mt-10 rounded-full shadow-lg transition-all block text-center"
       >
         Get Started Free
-      </motion.button>
+      </Link>
 
       {/* Soft Glow behind Genie */}
       {/* <div className="absolute top-1/3 w-[400px] h-[400px] rounded-full bg-[#6D28D9] opacity-20 blur-3xl"></div> */}

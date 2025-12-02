@@ -7,6 +7,7 @@ import WebsiteChatbotImg from "../../../public/WebsiteChatbot-bg.png";
 import WebsiteChatbotChat from "../../../public/WebsiteChatbot-chat.png";
 import WebsiteChatbotArrow from "../../../public/WebsiteChatbot-arrow.png";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function WebsiteChatbot() {
   const ref = useRef(null);
@@ -96,22 +97,22 @@ export default function WebsiteChatbot() {
           </p>
 
           <div className="flex flex-col gap-4 pt-4 signin-buttons">
-            <motion.button
+            <motion.div
               variants={fadeInUp}
-              className="flex items-center justify-center gap-2 bg-[#1a73e8] text-white font-medium px-6 py-5 rounded-lg hover:bg-[#1558b0] transition shadow-md"
+              className="flex items-center cursor-pointer justify-center gap-2 bg-[#1a73e8] text-white font-medium px-6 py-5 rounded-lg hover:bg-[#1558b0] transition shadow-md"
             >
-              <span>
+              {/* <span>
                 <Image
                   src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                   alt="Google Icon"
                   width={20}
                   height={10}
                 />
-              </span>
-              Sign Up with Google →
-            </motion.button>
+              </span> */}
+              <Link href="#contact">Get Started Free</Link>
+            </motion.div>
 
-            <motion.button
+            {/* <motion.button
               variants={fadeInUp}
               className="flex items-center justify-center gap-2 bg-[#bf31c9] text-white font-medium px-6 py-5 rounded-lg hover:bg-gray-800 transition shadow-md"
             >
@@ -119,12 +120,8 @@ export default function WebsiteChatbot() {
                 <Mail className="w-5 h-5 text-red-500" />
               </span>
               Sign Up with an email →
-            </motion.button>
+            </motion.button> */}
           </div>
-
-          <motion.p variants={fadeInUp} className="text-white text-sm pt-2">
-            It’s free. No credit card required.
-          </motion.p>
         </motion.div>
       </div>
 
@@ -147,7 +144,7 @@ export default function WebsiteChatbot() {
               variants={fadeInUp}
               className="flex items-center justify-center gap-2 bg-[#1a73e8] text-white font-medium px-6 py-5 rounded-lg hover:bg-[#1558b0] transition shadow-md"
             >
-              <span>
+              {/* <span>
                 <Image
                   src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                   alt="Google Icon"
@@ -155,10 +152,12 @@ export default function WebsiteChatbot() {
                   height={10}
                 />
               </span>
-              Sign Up with Google →
+              Sign Up with Google → */}
+
+              <Link href="#contact">Get Started Free</Link>
             </motion.button>
 
-            <motion.button
+            {/* <motion.button
               variants={fadeInUp}
               className="flex items-center justify-center gap-2 bg-[#bf31c9] text-white font-medium px-6 py-5 rounded-lg hover:bg-gray-800 transition shadow-md"
             >
@@ -166,12 +165,8 @@ export default function WebsiteChatbot() {
                 <Mail className="w-5 h-5 text-red-500" />
               </span>
               Sign Up with an email →
-            </motion.button>
+            </motion.button> */}
           </div>
-
-          <motion.p variants={fadeInUp} className="text-white text-sm pt-2">
-            It’s free. No credit card required.
-          </motion.p>
         </motion.div>
 
         <motion.div

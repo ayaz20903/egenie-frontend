@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -11,18 +12,13 @@ export default function Footer() {
 
         {/* Right side links */}
         <div className="absolute right-6 flex items-center gap-6">
-          <a
-            href="/terms"
-            className="text-sm text-white/80 hover:text-white transition"
-          >
+          <Link href="t-c" className="hover:underline">
             Terms & Conditions
-          </a>
-          <a
-            href="/privacy"
-            className="text-sm text-white/80 hover:text-white transition"
-          >
-            Privacy Policy
-          </a>
+          </Link>
+
+          <Link href="privacy-policy" className="hover:underline">
+            Privacy Policies
+          </Link>
         </div>
       </div>
     </footer>

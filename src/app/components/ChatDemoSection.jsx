@@ -330,10 +330,8 @@ import arrow from "../../../public/arrow.png";
 const avatars = [
   { src: "/avatar1.png", name: "Alex" },
   { src: "/avatar2.png", name: "David" },
-  { src: "/avatar3.png", name: "Sofie" },
-  { src: "/avatar4.png", name: "Martha" },
+  { src: "/avatar4.avif", name: "Martha" },
   { src: "/avatar5.png", name: "Amy" },
-  { src: "/avatar6.png", name: "Shelly" },
 ];
 
 const industryCategories = [
@@ -551,52 +549,64 @@ export default function ChatDemoSection() {
       >
         {showAvatarGallery ? (
           // Avatar selection screen
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="w-[340px] h-[640px] bg-white rounded-[40px] p-6 shadow-2xl flex flex-col items-center justify-center"
-            style={{
-              backgroundImage: "url('/whatsappbg.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <h3 className="text-2xl font-semibold mb-8 text-gray-700">
-              Choose Your Avatar
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {avatars.map((avatar, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => startChatAfterAvatar(avatar)}
-                  className="cursor-pointer"
-                >
-                  <Image
-                    src={avatar.src}
-                    alt={avatar.name}
-                    width={130}
-                    height={90}
-                    className="bg-[#d9d2ca] rounded-xl border-2 border-transparent hover:border-purple-500"
-                  />
-                  <p className="text-center mt-2 text-gray-700">
-                    {avatar.name}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="w-[340px] h-[640px] bg-white rounded-[40px] p-6 shadow-2xl flex flex-col items-center justify-center"
+              style={{
+                backgroundImage: "url('/whatsappbg.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h3 className="text-2xl font-semibold mb-8 text-gray-700">
+                Choose Your Avatar
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {avatars.map((avatar, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => startChatAfterAvatar(avatar)}
+                    className="cursor-pointer"
+                  >
+                    <Image
+                      src={avatar.src}
+                      alt={avatar.name}
+                      width={130}
+                      height={90}
+                      className="bg-[#d9d2ca] rounded-xl border-2 border-transparent hover:border-purple-500"
+                    />
+                    <p className="text-center mt-2 text-gray-700">
+                      {avatar.name}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            <p className="w-[340px] text-xs text-center mt-5 ">
+              All avatars displayed are AI-generated. They are used solely for
+              educational purposes and do not represent real individuals.
+            </p>
+          </div>
         ) : !startDemo ? (
           // Genie Preview screen
-          <div className="w-[340px] h-[640px] bg-white rounded-[40px] p-1 shadow-2xl flex flex-col items-center justify-center">
-            <div className="w-full h-full bg-whitesmoke rounded-[32px] flex flex-col items-center justify-center">
-              <Image src={genieImage} alt="Genie" />
-              <h3 className="text-2xl font-bold text-gray-700 mt-8 text-center px-4">
-                Wish for More Leads? eGeniePlus Grants It Instantly.
-              </h3>
+          <div>
+            <div className="w-[340px] h-[640px] bg-white rounded-[40px] p-1 shadow-2xl flex flex-col items-center justify-center">
+              <div className="w-full h-full bg-whitesmoke rounded-[32px] flex flex-col items-center justify-center">
+                <Image src={genieImage} alt="Genie" />
+                <h3 className="text-2xl font-bold text-gray-700 mt-8 text-center px-4">
+                  Wish for More Leads? eGeniePlus Grants It Instantly.
+                </h3>
+              </div>
             </div>
+            <p className="w-[340px] text-xs text-center mt-5 ">
+              All avatars displayed are AI-generated. They are used solely for
+              educational purposes and do not represent real individuals.
+            </p>
           </div>
         ) : (
           // Chat screen
@@ -675,6 +685,10 @@ export default function ChatDemoSection() {
                 )}
               </div>
             </div>
+            <p className="w-[340px] text-xs text-center mt-5 ">
+              All avatars displayed are AI-generated. They are used solely for
+              educational purposes and do not represent real individuals.
+            </p>
           </motion.div>
         )}
       </motion.div>

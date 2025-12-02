@@ -179,9 +179,27 @@ export default function FeatureShowcase() {
                 </p>
               </div>
             )}
+
+            <p className="w-[400px] text-center mt-5 ">
+              All avatars displayed are AI-generated. They are used solely for
+              educational purposes and do not represent real individuals.
+            </p>
           </motion.div>
         </div>
       </div>
+
+      <p className="container px-6 text-xs mx-auto text-black mt-5 ">
+        Disclaimer: All logos, trademarks, and brand names displayed on this
+        website are the property of their respective owners and are used solely
+        for the purposes of customer education, awareness, and to facilitate the
+        promotion and sale of the products and services associated with these
+        brands. We do not claim any affiliation, endorsement, or representation
+        of these brands or their products. The use of logos, trademarks, and
+        icons is strictly for informational purposes only and does not imply any
+        direct or indirect relationship with the brand owners. All rights to the
+        logos, trademarks, and brand names are reserved by their respective
+        owners.
+      </p>
     </section>
   );
 }

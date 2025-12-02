@@ -282,12 +282,12 @@ export default function CaseStudies() {
                   ))}
                 </ul>
 
-                <a
+                {/* <a
                   href="#"
                   className="mt-8 inline-flex items-center gap-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent font-semibold"
                 >
                   Learn more →
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -299,7 +299,9 @@ export default function CaseStudies() {
         </AnimatePresence>
 
         {/* Navigation */}
-        <div className="absolute bottom-[-40px] flex items-center justify-center gap-6">
+        <div className="absolute left-[6%] bottom-[15%] flex items-center justify-center gap-6">
+          {/* <div>
+            <p className="mb-5">Explore More</p> */}
           <button
             onClick={prevSlide}
             className="p-3 rounded-full bg-[#6D28D9] text-white hover:bg-[#5B21B6] transition"
@@ -312,6 +314,7 @@ export default function CaseStudies() {
           >
             <ArrowRight className="w-5 h-5" />
           </button>
+          {/* </div> */}
         </div>
       </div>
     </section>

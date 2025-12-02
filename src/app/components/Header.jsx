@@ -34,11 +34,11 @@ export default function Header() {
           <Link href="#demo" className="hover:text-white transition">
             Demo
           </Link>
-          <Link href="#contact" className="hover:text-white transition">
+          {/* <Link href="#contact" className="hover:text-white transition">
             Contact
-          </Link>
+          </Link> */}
           <Link
-            href="#get-started"
+            href="#contact"
             className="px-5 py-2 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-white font-semibold rounded-full shadow-lg hover:opacity-90 transition"
           >
             Get Started

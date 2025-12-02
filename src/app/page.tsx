@@ -25,12 +25,6 @@ export default function Home() {
         <HeroSection />
         <ChatAnimation />
         <ChatDemoSection />
-        {/* <ChatbotRestaurant /> */}
-        {/* <ChatbotGroceryStore /> */}
-        {/* <NailArt />
-        <PizzaShopChat />
-        <Bubbletea /> */}
-
         <CaseStudies />
         <WebsiteChatbot />
       </div>

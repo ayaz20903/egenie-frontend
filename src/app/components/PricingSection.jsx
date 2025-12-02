@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
@@ -25,31 +26,32 @@ export default function PricingSection() {
     // },
     {
       name: "Smart Genie",
-      monthly: 69.99,
-      yearly: 49.99 * 12 * 0.9,
+      monthly: 50,
+      yearly: 50 * 12 * 0.9,
       desc: "Ideal for professionals who need consistent help managing content, research, and automation.",
       gradient: "from-[#3730a3] to-[#6d28d9]",
       features: [
         "Up to 10,000 messages/month",
-        "Smart memory & personalization",
+        "Smart memory",
         "Access to analytics dashboard",
-        "Priority email & chat support",
+        "Replies within 48 hours",
         "Single Bots",
       ],
       cta: "Upgrade Now",
     },
     {
       name: "Super Genie",
-      monthly: 99.99,
-      yearly: 79.99 * 12 * 0.9,
+      monthly: 100,
+      yearly: 100 * 12 * 0.9,
       desc: "For teams and power messages. Get unlimited queries, advanced AI models, and full integration power.",
       gradient: "from-[#6d28d9] to-[#db2777]",
       features: [
-        "Up to 25,000 messages/month",
+        "Up to 30,000 messages/month",
         "Smart memory & personalization",
         "Access to analytics dashboard",
-        "24/7 premium support",
+        "24/7  support",
         "3 Bots",
+        "Instagram Bot",
       ],
       highlight: true,
       cta: "Go Super",
@@ -90,9 +92,22 @@ export default function PricingSection() {
           className="text-4xl md:text45xl font-bold mb-6"
         >
           <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
-            £398
+            £499
           </span>{" "}
-          setup fee + 1 month free + free shopify website
+          setup fee + 1 month free + shopify website
+        </motion.h3>
+
+        <motion.h3
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-4xl md:text45xl font-bold mb-6"
+        >
+          If you have shopify website{" "}
+          <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
+            £399
+          </span>{" "}
+          setup fee + 1 month free
         </motion.h3>
 
         {/* Toggle Switch */}
@@ -185,7 +200,7 @@ export default function PricingSection() {
                     : "bg-white/10 hover:bg-white/20 text-white"
                 }`}
               >
-                {plan.cta}
+                <Link href="#contact">{plan.cta}</Link>
               </motion.button>
             </motion.div>
           ))}

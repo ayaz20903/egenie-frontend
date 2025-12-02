@@ -186,3 +186,7 @@ body {
 .arrow-img {
   transform: scaleX(-1);
 }
+
+#next-logo {
+  display: none !important;
+}

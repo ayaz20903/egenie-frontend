@@ -85,6 +85,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import phoneMockup from "../../../public/phone-mockup3.png";
+import Link from "next/link";
 
 export default function ChatAnimation() {
   return (
@@ -117,24 +118,22 @@ export default function ChatAnimation() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="w-48 mx-auto lg:mx-[0] signin-buttons"
           >
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 25px #9A5CFF" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.3 }}
               className="my-3 px-8 py-3 bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-white font-semibold rounded-full shadow-lg transition-all z-9"
             >
               Get Started Free
-            </motion.button>
-          </motion.div>
+            </motion.button> */}
 
-          <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-white text-sm pt-2"
-          >
-            It’s free. No credit card required.
-          </motion.p>
+            <Link
+              href="#contact"
+              className="px-8 py-3 bg-gradient-to-r cursor-pointer from-[#6D28D9] to-[#3B82F6] text-white font-semibold mt-10 rounded-full shadow-lg transition-all block text-center"
+            >
+              Get Started Free
+            </Link>
+          </motion.div>
         </div>
 
         {/* RIGHT SECTION (Phone + Video) */}
