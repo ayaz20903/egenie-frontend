@@ -330,8 +330,10 @@ import arrow from "../../../public/arrow.png";
 const avatars = [
   { src: "/avatar1.png", name: "Alex" },
   { src: "/avatar2.png", name: "David" },
-  { src: "/avatar4.avif", name: "Martha" },
-  { src: "/avatar5.png", name: "Amy" },
+  { src: "/avatar4-2.png", name: "Martha" },
+  { src: "/avatar5-1.png", name: "Amy" },
+  { src: "/avatar3-1.png", name: "John" },
+  { src: "/avatar6-2.png", name: "Sam" },
 ];
 
 const industryCategories = [

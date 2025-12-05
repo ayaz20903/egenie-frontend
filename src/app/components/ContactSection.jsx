@@ -143,7 +143,7 @@ export default function ContactSection() {
               value={form.phone}
               onChange={handleChange}
               type="text"
-              placeholder="+91 9876543210"
+              placeholder="+44 XXXXXXXXXX"
               className="w-full px-4 py-3 bg-[#1E1E2A] rounded-xl border border-transparent focus:outline-none focus:border-[#6D28D9] transition"
               required
             />
