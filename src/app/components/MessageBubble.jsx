@@ -1,3 +1,5 @@
+"use client";
+
 export default function MessageBubble({ msg, onOptionClick }) {
   if (msg.user) {
     return (

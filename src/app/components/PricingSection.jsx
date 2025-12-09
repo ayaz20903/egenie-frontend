@@ -9,21 +9,6 @@ export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
 
   const plans = [
-    // {
-    //   name: "Mini Genie",
-    //   monthly: "Free",
-    //   yearly: "Free",
-    //   desc: "Perfect for new users exploring what Genie can do. Get daily insights and responses for free.",
-    //   gradient: "from-[#1f2937] to-[#111827]",
-    //   features: [
-    //     "Limited queries per day",
-    //     "Basic conversation flow",
-    //     "Access to core AI tools",
-    //     "Email support only",
-    //     "No custom integrations",
-    //   ],
-    //   cta: "Start Free",
-    // },
     {
       name: "Smart Genie",
       monthly: 50,
