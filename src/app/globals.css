@@ -187,6 +187,6 @@ body {
   transform: scaleX(-1);
 }
 
-#next-logo {
+#devtools-indicator {
   display: none !important;
 }

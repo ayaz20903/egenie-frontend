@@ -103,7 +103,7 @@ export default function PricingSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-4xl md:text45xl font-bold mb-6"
         >
-          If you have shopify website{" "}
+          If you have a shopify website{" "}
           <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
             £399
           </span>{" "}
