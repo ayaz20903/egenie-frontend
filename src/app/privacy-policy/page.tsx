@@ -13,7 +13,7 @@ const PdfViewer = () => {
           // src="/privacy-cookies-policy.pdf#toolbar=0"
 
           src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(
-            "https://d3vxdfefv6q3t6.cloudfront.net/privacy-cookies-policy.pdf"
+            "https://d3vxdfefv6q3t6.cloudfront.net/Privacy-Policy-eGeniePlus.pdf"
           )}`}
           width="100%"
           height="100%"
