@@ -26,7 +26,8 @@ export default function ContactSection() {
     e.preventDefault();
     setLoading(true);
     setStatus("");
-    console.log("📤 Sending form:", form);
+
+    // Allow only digits and exactly 10 chars
 
     try {
       const res = await fetch("/api/submitForm", {
@@ -141,9 +142,15 @@ export default function ContactSection() {
             <input
               name="phone"
               value={form.phone}
-              onChange={handleChange}
-              type="text"
-              placeholder="+44 XXXXXXXXXX"
+              onChange={(e) => {
+                // optional: block non-digits on typing
+                const onlyDigits = e.target.value.replace(/\D/g, "");
+                if (onlyDigits.length <= 12) {
+                  setForm({ ...form, phone: onlyDigits });
+                }
+              }}
+              type="tel"
+              placeholder="44 XXXXXXXXXX"
               className="w-full px-4 py-3 bg-[#1E1E2A] rounded-xl border border-transparent focus:outline-none focus:border-[#6D28D9] transition"
               required
             />
