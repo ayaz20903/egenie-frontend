@@ -44,8 +44,8 @@ export default function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="py-24 text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+    <section id="pricing" className="py-20 text-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 text-center hidden">
         {/* Heading */}
         <motion.h2
           initial={{ y: 40, opacity: 0 }}
@@ -190,6 +190,17 @@ export default function PricingSection() {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <motion.h2
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold"
+        >
+          Get your own AI bot at a surprisingly low cost.
+        </motion.h2>
       </div>
     </section>
   );

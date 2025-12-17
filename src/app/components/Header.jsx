@@ -28,7 +28,7 @@ export default function Header() {
           <Link href="#features" className="hover:text-white transition">
             Features
           </Link>
-          <Link href="#pricing" className="hover:text-white transition">
+          <Link href="#pricing" className="hover:text-white transition hidden">
             Pricing
           </Link>
           <Link href="#demo" className="hover:text-white transition">
@@ -102,7 +102,7 @@ export default function Header() {
             <Link
               href="#pricing"
               onClick={() => setIsOpen(false)}
-              className="block hover:text-white"
+              className="block hover:text-white hidden"
             >
               Pricing
             </Link>
