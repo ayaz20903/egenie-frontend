@@ -6,14 +6,14 @@ const PdfViewer = () => {
     <>
       <Head>
         <title>iPayOn | privacy policy</title>
-        <link rel="canonical" href="https://egenieplus/privacy-policy" />
+        <link rel="canonical" href="https://egenie/privacy-policy" />
       </Head>
       <div className="container mx-auto px-5 flex justify-center items-center h-screen">
         <iframe
           // src="/privacy-cookies-policy.pdf#toolbar=0"
 
           src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(
-            "https://d3vxdfefv6q3t6.cloudfront.net/t&c-eGeniePlus.pdf"
+            "https://d3vxdfefv6q3t6.cloudfront.net/Terms-and-Conditions-eGenie1.pdf"
           )}`}
           width="100%"
           height="100%"

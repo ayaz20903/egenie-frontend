@@ -26,94 +26,9 @@ export async function GET(req: Request) {
       },
     });
 
-    // 1️⃣ Send thank-you email to user
-    // await transporter.sendMail({
-    //   from: `"iPayon+" <${process.env.SMTP_USER}>`,
-    //   to: lead.email,
-    //   subject: "Thank you for confirming!",
-    //   html: `
-    //     <h2>Hi ${lead.name},</h2>
-    //     <p>Thank you for confirming your email. Our team will get in touch with you soon!</p>
-    //   `,
-    // });
-
     const APP_URL = process.env.NEXT_PUBLIC_APP_URL!;
     const logoUrl = `${APP_URL}/logo.png`;
     const imageUrl = `${APP_URL}/new-genie.png`;
-
-    //     await transporter.sendMail({
-    //       from: `"eGeniePlus" <${process.env.SMTP_USER}>`,
-    //       to: lead.email,
-    //       subject: "Thank you for confirming!",
-
-    //       html: `
-    //         <div style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0b1020;padding:32px 16px;">
-    //           <div style="max-width:520px;margin:0 auto;background:#0f172a;border-radius:16px;padding:32px 28px;border:1px solid rgba(148,163,184,0.3);">
-
-    //           <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:24px;">
-    //               <tr>
-    //                 <td align="center">
-    //                   <img
-    //                     src="${logoUrl}"
-    //                     alt="eGeniePlus"
-    //                     style="height:40px;max-width:140px;display:inline-block;"
-    //                   />
-    //                 </td>
-    //               </tr>
-    //             </table>
-
-    //             <!-- Row 1: text left, image right -->
-    //             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:16px;">
-    //               <tr>
-    //                 <!-- Text column -->
-    //                 <td width="65%" valign="top" style="text-align:left;">
-    //                  <h1 style="margin:18px 0 8px;font-size:24px;line-height:1.3;">
-    //   <span
-    //     style="
-    //       background: linear-gradient(to right, #6D28D9, #3B82F6);
-    //       -webkit-background-clip: text;
-    //       background-clip: text;
-    //       color: transparent;
-    //       -webkit-text-fill-color: transparent;
-    //       display: inline-block;
-    //     "
-    //   >
-    //     Hi ${lead.name},
-    //   </span>
-    // </h1>
-    //                   <p style="margin:6px 0 0;font-size:14px;line-height:1.7;color:#9ca3af;">
-    //                     Thank you for confirming your email address.
-    //                   </p>
-
-    //                   <p style="margin:6px 0 0;font-size:14px;line-height:1.7;color:#9ca3af;">
-    //                 Your details are now verified. Our team will get in touch with you soon with the next steps.
-    //                   </p>
-
-    //                   <p style="margin:15px 0 0;font-size:13px;line-height:1.7;color:#9ca3af;">
-    //               If you did not request this, you can safely ignore this email.
-    //               </p>
-
-    //                 </td>
-
-    //                 <!-- Image column -->
-    //                 <td width="35%" valign="top" style="text-align:right;">
-    //                   <img
-    //                     src="${imageUrl}"
-    //                     alt="Confirmation"
-    //                     style="height:210px;max-width:160px;display:inline-block;"
-    //                   />
-    //                 </td>
-    //               </tr>
-    //             </table>
-
-    //           </div>
-
-    //           <p style="max-width:520px;margin:12px auto 0;text-align:center;font-size:11px;color:#6b7280;">
-    //             © ${new Date().getFullYear()} eGeniePlus. All rights reserved.
-    //           </p>
-    //         </div>
-    //         `,
-    //     });
 
     await transporter.sendMail({
       from: `"eGeniePlus" <${process.env.SMTP_USER}>`,
