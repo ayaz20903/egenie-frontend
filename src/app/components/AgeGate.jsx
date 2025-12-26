@@ -7,7 +7,7 @@ export default function AgeGate({ children }) {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    const verified = localStorage.getItem("age_verified");
+    const verified = localStorage.getItem("age_verified_egenieplus");
     if (!verified) {
       setShowModal(true);
     }
@@ -28,7 +28,7 @@ export default function AgeGate({ children }) {
   }, [showModal]);
 
   const handleConfirm = () => {
-    localStorage.setItem("age_verified", "true");
+    localStorage.setItem("age_verified_egenieplus", "true");
     setShowModal(false);
   };
 
