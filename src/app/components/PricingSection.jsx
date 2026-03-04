@@ -12,7 +12,7 @@ export default function PricingSection() {
     {
       name: "Smart Genie",
       monthly: 50,
-      yearly: 50 * 12 * 0.9,
+      yearly: 50 * 12,
       desc: "Ideal for professionals who need consistent help managing content, research, and automation.",
       gradient: "from-[#3730a3] to-[#6d28d9]",
       features: [
@@ -22,7 +22,7 @@ export default function PricingSection() {
         "Replies within 48 hours",
         "Single Bots",
       ],
-      cta: "Upgrade Now",
+      cta: "Select Smart Genie",
     },
     {
       name: "Super Genie",
@@ -39,13 +39,13 @@ export default function PricingSection() {
         "Instagram Bot",
       ],
       highlight: true,
-      cta: "Go Super",
+      cta: "select Super Genie",
     },
   ];
 
   return (
     <section id="pricing" className="py-20 text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 text-center hidden">
+      <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
         <motion.h2
           initial={{ y: 40, opacity: 0 }}
@@ -77,7 +77,7 @@ export default function PricingSection() {
           className="text-4xl md:text45xl font-bold mb-6"
         >
           <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
-            £499
+            £600
           </span>{" "}
           setup fee + 1 month free + shopify website
         </motion.h3>
@@ -90,7 +90,7 @@ export default function PricingSection() {
         >
           If you have a shopify website{" "}
           <span className="bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#3B82F6] text-transparent">
-            £399
+            £500
           </span>{" "}
           setup fee + 1 month free
         </motion.h3>
@@ -100,7 +100,7 @@ export default function PricingSection() {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex justify-center items-center gap-4 mb-16 select-none"
+          className="flex justify-center items-center gap-4 mt-16 mb-14  select-none"
         >
           <span
             className={`text-sm md:text-base ${
@@ -154,14 +154,14 @@ export default function PricingSection() {
                   {plan.monthly === "Free"
                     ? "Free"
                     : isYearly
-                    ? `£${plan.yearly.toFixed(2)}`
-                    : `£${plan.monthly}`}
+                      ? `£${plan.yearly.toFixed(2)}`
+                      : `£${plan.monthly}`}
                   <span className="text-sm text-gray-400">
                     {plan.monthly === "Free"
                       ? ""
                       : isYearly
-                      ? " /year"
-                      : " /month"}
+                        ? " /year"
+                        : " /month"}
                   </span>
                 </p>
 
